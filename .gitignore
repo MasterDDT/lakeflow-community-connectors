@@ -33,6 +33,10 @@ env/
 *.swo
 *~
 
+# Isaac
+**/.isaac/*
+
+
 # Test artifacts
 sources/*/schema_validation_results.json
 *.pyc
