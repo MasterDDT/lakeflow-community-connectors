@@ -1,0 +1,62 @@
+[
+  {
+    "canvas_id": "whiskey--pk0",
+    "time": "2024-01--pk0",
+    "total_stats": {
+      "revenue": 251.12,
+      "conversions": 16956,
+      "conversions_by_entry_time": 47910,
+      "entries": 70218
+    },
+    "variant_stats": "victor-859",
+    "step_stats": "lima-783"
+  },
+  {
+    "canvas_id": "uniform--pk1",
+    "time": "2024-01--pk1",
+    "total_stats": {
+      "revenue": 919.5,
+      "conversions": 6507,
+      "conversions_by_entry_time": 68309,
+      "entries": 25500
+    },
+    "variant_stats": "juliet-872",
+    "step_stats": "whiskey-736"
+  },
+  {
+    "canvas_id": "quebec-3-pk2",
+    "time": "2024-01--pk2",
+    "total_stats": {
+      "revenue": 397.4,
+      "conversions": 43038,
+      "conversions_by_entry_time": 82146,
+      "entries": 71495
+    },
+    "variant_stats": "charlie-243",
+    "step_stats": "sierra-737"
+  },
+  {
+    "canvas_id": "papa-572-pk3",
+    "time": "2024-01--pk3",
+    "total_stats": {
+      "revenue": 640.97,
+      "conversions": 493,
+      "conversions_by_entry_time": 6352,
+      "entries": 36989
+    },
+    "variant_stats": "kilo-176",
+    "step_stats": "foxtrot-653"
+  },
+  {
+    "canvas_id": "echo-567-pk4",
+    "time": "2024-01--pk4",
+    "total_stats": {
+      "revenue": 267.04,
+      "conversions": 29504,
+      "conversions_by_entry_time": 15631,
+      "entries": 10843
+    },
+    "variant_stats": "xray-992",
+    "step_stats": "bravo-332"
+  }
+]

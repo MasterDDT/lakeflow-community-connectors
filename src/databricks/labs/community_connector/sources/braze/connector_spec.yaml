@@ -1,0 +1,36 @@
+# Braze Community Connector Spec
+# This file defines the specification for the connector including
+# connection parameters and allowlist options.
+
+# ============================================================================
+# Connection Parameters
+# These are provided when creating the Unity Catalog connection.
+# ============================================================================
+display_name: Braze
+connection:
+  parameters:
+    - name: rest_endpoint
+      type: string
+      required: true
+      description: >
+        Braze instance REST base URL (e.g., https://rest.iad-01.braze.com).
+        The instance REST endpoint is found in the Braze Dashboard under
+        Settings > APIs and Identifiers. Braze operates 15+ regional instances;
+        this parameter must be set to match your workspace location.
+    - name: api_key
+      type: string
+      required: true
+      secret: true
+      description: >
+        Braze REST API key used for Bearer token authentication.
+        Created in the Braze Dashboard under Settings > APIs and Identifiers > Rest API Keys.
+        The key must have read permissions enabled for the streams you want to sync.
+
+# ============================================================================
+# External Options Allowlist
+# These table-specific options must be included in the externalOptionsAllowList
+# parameter of the UC connection to allow them to be passed through.
+# Use a comma-separated string of option names.
+# If no table-specific options are needed, set to empty string or omit.
+# ============================================================================
+external_options_allowlist: "include_deprecated_streams,send_ids,history_days,app_id,unit,segment_id,product"

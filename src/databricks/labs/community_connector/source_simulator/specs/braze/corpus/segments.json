@@ -1,0 +1,41 @@
+[
+  {
+    "id": "oscar-71-pk0",
+    "name": "zulu-499",
+    "analytics_tracking_enabled": false,
+    "tags": [
+      "charlie-909"
+    ]
+  },
+  {
+    "id": "kilo-822-pk1",
+    "name": "sierra-407",
+    "analytics_tracking_enabled": false,
+    "tags": []
+  },
+  {
+    "id": "xray-313-pk2",
+    "name": "india-604",
+    "analytics_tracking_enabled": false,
+    "tags": [
+      "foxtrot-707"
+    ]
+  },
+  {
+    "id": "xray-389-pk3",
+    "name": "november-421",
+    "analytics_tracking_enabled": true,
+    "tags": [
+      "echo-772",
+      "november-567"
+    ]
+  },
+  {
+    "id": "india-82-pk4",
+    "name": "alpha-597",
+    "analytics_tracking_enabled": true,
+    "tags": [
+      "quebec-708"
+    ]
+  }
+]

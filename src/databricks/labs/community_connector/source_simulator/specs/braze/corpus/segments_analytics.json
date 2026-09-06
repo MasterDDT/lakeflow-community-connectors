@@ -1,0 +1,27 @@
+[
+  {
+    "segment_id": "uniform--pk0",
+    "time": "2024-01--pk0",
+    "size": 35173
+  },
+  {
+    "segment_id": "mike-977-pk1",
+    "time": "2024-01--pk1",
+    "size": 96481
+  },
+  {
+    "segment_id": "hotel-89-pk2",
+    "time": "2024-01--pk2",
+    "size": 83898
+  },
+  {
+    "segment_id": "mike-976-pk3",
+    "time": "2024-01--pk3",
+    "size": 97639
+  },
+  {
+    "segment_id": "quebec-3-pk4",
+    "time": "2024-01--pk4",
+    "size": 70629
+  }
+]

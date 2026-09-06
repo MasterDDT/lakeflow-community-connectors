@@ -1,0 +1,124 @@
+[
+  {
+    "campaign_id": "bravo-73-pk0",
+    "created_at": "victor-981",
+    "updated_at": "india-140",
+    "archived": true,
+    "draft": false,
+    "enabled": true,
+    "has_post_launch_draft": true,
+    "name": "tango-751",
+    "description": "kilo-614",
+    "schedule_type": "oscar-715",
+    "channels": [
+      "papa-259",
+      "romeo-513"
+    ],
+    "first_sent": "hotel-650",
+    "last_sent": "uniform-552",
+    "tags": [],
+    "teams": [
+      "xray-639"
+    ],
+    "messages": "quebec-734",
+    "conversion_behaviors": "hotel-778"
+  },
+  {
+    "campaign_id": "mike-946-pk1",
+    "created_at": "sierra-420",
+    "updated_at": "zulu-164",
+    "archived": false,
+    "draft": true,
+    "enabled": true,
+    "has_post_launch_draft": false,
+    "name": "golf-268",
+    "description": "uniform-237",
+    "schedule_type": "lima-812",
+    "channels": [
+      "delta-990"
+    ],
+    "first_sent": "alpha-793",
+    "last_sent": "xray-580",
+    "tags": [
+      "hotel-738",
+      "hotel-815"
+    ],
+    "teams": [
+      "whiskey-186"
+    ],
+    "messages": "november-841",
+    "conversion_behaviors": "india-891"
+  },
+  {
+    "campaign_id": "charlie--pk2",
+    "created_at": "kilo-151",
+    "updated_at": "foxtrot-404",
+    "archived": true,
+    "draft": false,
+    "enabled": true,
+    "has_post_launch_draft": true,
+    "name": "foxtrot-525",
+    "description": "tango-273",
+    "schedule_type": "papa-201",
+    "channels": [
+      "foxtrot-720",
+      "whiskey-419"
+    ],
+    "first_sent": "echo-426",
+    "last_sent": "xray-618",
+    "tags": [],
+    "teams": [
+      "november-832",
+      "delta-689"
+    ],
+    "messages": "oscar-717",
+    "conversion_behaviors": "delta-351"
+  },
+  {
+    "campaign_id": "november-pk3",
+    "created_at": "alpha-550",
+    "updated_at": "quebec-467",
+    "archived": true,
+    "draft": false,
+    "enabled": false,
+    "has_post_launch_draft": false,
+    "name": "india-911",
+    "description": "mike-193",
+    "schedule_type": "tango-727",
+    "channels": [],
+    "first_sent": "sierra-249",
+    "last_sent": "alpha-472",
+    "tags": [
+      "tango-675"
+    ],
+    "teams": [],
+    "messages": "india-121",
+    "conversion_behaviors": "golf-979"
+  },
+  {
+    "campaign_id": "juliet-5-pk4",
+    "created_at": "delta-598",
+    "updated_at": "papa-733",
+    "archived": false,
+    "draft": false,
+    "enabled": false,
+    "has_post_launch_draft": false,
+    "name": "tango-965",
+    "description": "mike-978",
+    "schedule_type": "tango-891",
+    "channels": [
+      "sierra-269"
+    ],
+    "first_sent": "charlie-106",
+    "last_sent": "bravo-875",
+    "tags": [
+      "zulu-642"
+    ],
+    "teams": [
+      "echo-171",
+      "kilo-435"
+    ],
+    "messages": "romeo-476",
+    "conversion_behaviors": "yankee-398"
+  }
+]

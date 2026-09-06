@@ -1,0 +1,47 @@
+[
+  {
+    "id": "alpha-12-pk0",
+    "name": "kilo-759",
+    "is_api_campaign": false,
+    "last_edited": "india-545",
+    "tags": [
+      "papa-566"
+    ]
+  },
+  {
+    "id": "kilo-669-pk1",
+    "name": "echo-482",
+    "is_api_campaign": true,
+    "last_edited": "india-223",
+    "tags": [
+      "bravo-948",
+      "xray-397"
+    ]
+  },
+  {
+    "id": "oscar-47-pk2",
+    "name": "november-744",
+    "is_api_campaign": true,
+    "last_edited": "alpha-740",
+    "tags": [
+      "romeo-104"
+    ]
+  },
+  {
+    "id": "echo-768-pk3",
+    "name": "sierra-507",
+    "is_api_campaign": true,
+    "last_edited": "november-319",
+    "tags": []
+  },
+  {
+    "id": "foxtrot--pk4",
+    "name": "zulu-898",
+    "is_api_campaign": false,
+    "last_edited": "zulu-127",
+    "tags": [
+      "mike-134",
+      "alpha-703"
+    ]
+  }
+]

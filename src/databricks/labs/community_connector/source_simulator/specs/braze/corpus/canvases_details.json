@@ -1,0 +1,121 @@
+[
+  {
+    "canvas_id": "delta-80-pk0",
+    "created_at": "november-213",
+    "updated_at": "golf-621",
+    "name": "hotel-367",
+    "description": "papa-406",
+    "archived": true,
+    "draft": false,
+    "enabled": true,
+    "has_post_launch_draft": false,
+    "schedule_type": "tango-659",
+    "first_entry": "echo-918",
+    "last_entry": "mike-647",
+    "channels": [],
+    "variants": "papa-404",
+    "tags": [
+      "delta-456"
+    ],
+    "teams": [
+      "mike-560",
+      "lima-438"
+    ],
+    "steps": "papa-330"
+  },
+  {
+    "canvas_id": "kilo-167-pk1",
+    "created_at": "bravo-271",
+    "updated_at": "kilo-229",
+    "name": "alpha-112",
+    "description": "mike-910",
+    "archived": true,
+    "draft": true,
+    "enabled": false,
+    "has_post_launch_draft": true,
+    "schedule_type": "foxtrot-643",
+    "first_entry": "echo-808",
+    "last_entry": "xray-889",
+    "channels": [],
+    "variants": "alpha-127",
+    "tags": [
+      "golf-964",
+      "victor-491"
+    ],
+    "teams": [
+      "charlie-175"
+    ],
+    "steps": "zulu-580"
+  },
+  {
+    "canvas_id": "lima-636-pk2",
+    "created_at": "papa-366",
+    "updated_at": "foxtrot-408",
+    "name": "whiskey-364",
+    "description": "oscar-766",
+    "archived": false,
+    "draft": false,
+    "enabled": false,
+    "has_post_launch_draft": false,
+    "schedule_type": "foxtrot-563",
+    "first_entry": "oscar-518",
+    "last_entry": "alpha-698",
+    "channels": [],
+    "variants": "zulu-238",
+    "tags": [
+      "whiskey-520",
+      "echo-438"
+    ],
+    "teams": [
+      "hotel-476",
+      "lima-353"
+    ],
+    "steps": "delta-698"
+  },
+  {
+    "canvas_id": "tango-25-pk3",
+    "created_at": "mike-707",
+    "updated_at": "xray-971",
+    "name": "romeo-301",
+    "description": "bravo-144",
+    "archived": false,
+    "draft": true,
+    "enabled": true,
+    "has_post_launch_draft": false,
+    "schedule_type": "xray-300",
+    "first_entry": "november-396",
+    "last_entry": "november-383",
+    "channels": [
+      "sierra-435"
+    ],
+    "variants": "romeo-783",
+    "tags": [
+      "hotel-666",
+      "foxtrot-536"
+    ],
+    "teams": [],
+    "steps": "oscar-970"
+  },
+  {
+    "canvas_id": "victor-3-pk4",
+    "created_at": "charlie-692",
+    "updated_at": "november-760",
+    "name": "xray-411",
+    "description": "juliet-919",
+    "archived": false,
+    "draft": false,
+    "enabled": true,
+    "has_post_launch_draft": true,
+    "schedule_type": "bravo-753",
+    "first_entry": "november-735",
+    "last_entry": "yankee-247",
+    "channels": [],
+    "variants": "mike-870",
+    "tags": [],
+    "teams": [
+      "juliet-541",
+      "bravo-590"
+    ],
+    "steps": "tango-369"
+  }
+]

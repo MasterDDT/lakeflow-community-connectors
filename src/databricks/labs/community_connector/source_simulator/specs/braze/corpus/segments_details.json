@@ -1,0 +1,62 @@
+[
+  {
+    "segment_id": "charlie--pk0",
+    "created_at": "zulu-352",
+    "updated_at": "bravo-784",
+    "name": "papa-590",
+    "description": "golf-634",
+    "text_description": "juliet-191",
+    "tags": [],
+    "teams": [
+      "november-353"
+    ]
+  },
+  {
+    "segment_id": "foxtrot--pk1",
+    "created_at": "uniform-904",
+    "updated_at": "oscar-201",
+    "name": "quebec-203",
+    "description": "xray-320",
+    "text_description": "india-973",
+    "tags": [],
+    "teams": [
+      "sierra-505"
+    ]
+  },
+  {
+    "segment_id": "lima-162-pk2",
+    "created_at": "echo-892",
+    "updated_at": "hotel-272",
+    "name": "kilo-895",
+    "description": "yankee-445",
+    "text_description": "oscar-818",
+    "tags": [
+      "romeo-269"
+    ],
+    "teams": [
+      "sierra-589"
+    ]
+  },
+  {
+    "segment_id": "golf-696-pk3",
+    "created_at": "victor-231",
+    "updated_at": "zulu-530",
+    "name": "uniform-782",
+    "description": "sierra-221",
+    "text_description": "victor-552",
+    "tags": [],
+    "teams": [
+      "hotel-190"
+    ]
+  },
+  {
+    "segment_id": "juliet-4-pk4",
+    "created_at": "juliet-680",
+    "updated_at": "bravo-422",
+    "name": "romeo-625",
+    "description": "yankee-194",
+    "text_description": "oscar-371",
+    "tags": [],
+    "teams": []
+  }
+]

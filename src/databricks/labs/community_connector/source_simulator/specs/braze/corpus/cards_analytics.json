@@ -1,0 +1,42 @@
+[
+  {
+    "card_id": "quebec-4-pk0",
+    "time": "2024-01--pk0",
+    "clicks": 30807,
+    "impressions": 11656,
+    "unique_clicks": 60361,
+    "unique_impressions": 36822
+  },
+  {
+    "card_id": "india-58-pk1",
+    "time": "2024-01--pk1",
+    "clicks": 9359,
+    "impressions": 94709,
+    "unique_clicks": 91347,
+    "unique_impressions": 37551
+  },
+  {
+    "card_id": "romeo-90-pk2",
+    "time": "2024-01--pk2",
+    "clicks": 4806,
+    "impressions": 1219,
+    "unique_clicks": 53792,
+    "unique_impressions": 84629
+  },
+  {
+    "card_id": "quebec-9-pk3",
+    "time": "2024-01--pk3",
+    "clicks": 61420,
+    "impressions": 53795,
+    "unique_clicks": 29794,
+    "unique_impressions": 91955
+  },
+  {
+    "card_id": "november-pk4",
+    "time": "2024-01--pk4",
+    "clicks": 19296,
+    "impressions": 54779,
+    "unique_clicks": 17999,
+    "unique_impressions": 23649
+  }
+]

@@ -1,0 +1,341 @@
+# Braze REST Export & Analytics endpoints exercised by the connector.
+#
+# Auth is a Bearer API key and is ignored by the simulator.
+#
+# Two response families:
+#   * List endpoints (/campaigns/list, /canvas/list, /segments/list,
+#     /events/list, /feed/list, /purchases/product_list) — 0-indexed ``page``
+#     pagination, records under a named envelope key (campaigns / canvases /
+#     segments / events / cards / products). The connector stops on the first
+#     short (< page_size) page, so with a small bootstrapped corpus only
+#     page 0 is fetched (avoids the simulator's 1-indexed page_number style
+#     mapping page 0 and page 1 to the same offset).
+#   * Analytics ``data_series`` endpoints — NOT paginated; the whole time
+#     series comes back under ``data`` (or nested ``data.stats`` for Canvas).
+#     ``length`` / ``ending_at`` / ``starting_at`` / id params are ``ignore``:
+#     the simulator returns the full corpus and the connector's fixed
+#     init-time cap drives Trigger.AvailableNow termination. Each such
+#     endpoint carries ``synthesize_future_records`` so the termination test
+#     can verify the connector caps its returned offset at the init snapshot.
+#
+# The ``/…/details`` endpoints return a single object at the top level in the
+# real API; the simulator serves the bootstrapped JSON array and the connector
+# takes the first element (then stamps the parent id), so no wrapper/single_entity
+# is declared for them.
+#
+# Each ``corpus`` name matches a table so connector-tester can bootstrap it
+# from that table's schema.
+
+endpoints:
+  # =====================================================================
+  # Campaigns
+  # =====================================================================
+  - path: /campaigns/list
+    method: GET
+    corpus: campaigns
+    response:
+      pagination_style: page_number
+      wrapper:
+        records_key: campaigns
+    params:
+      page: {role: page}
+      include_archived: {role: ignore}
+      sort_direction: {role: ignore}
+      "last_edit.time[gt]": {role: ignore}
+
+  - path: /campaigns/details
+    method: GET
+    corpus: campaigns_details
+    response:
+      pagination_style: none
+    params:
+      campaign_id: {role: ignore}
+      post_launch_draft_version: {role: ignore}
+      include_has_translatable_content: {role: ignore}
+
+  - path: /campaigns/data_series
+    method: GET
+    corpus: campaigns_analytics
+    response:
+      pagination_style: none
+      wrapper:
+        records_key: data
+    params:
+      campaign_id: {role: ignore}
+      length: {role: ignore}
+      ending_at: {role: ignore}
+    synthesize_future_records:
+      cursor_field: time
+      count: 3
+
+  # =====================================================================
+  # Canvases
+  # =====================================================================
+  - path: /canvas/list
+    method: GET
+    corpus: canvases
+    response:
+      pagination_style: page_number
+      wrapper:
+        records_key: canvases
+    params:
+      page: {role: page}
+      include_archived: {role: ignore}
+      sort_direction: {role: ignore}
+      "last_edit.time[gt]": {role: ignore}
+
+  - path: /canvas/details
+    method: GET
+    corpus: canvases_details
+    response:
+      pagination_style: none
+    params:
+      canvas_id: {role: ignore}
+      post_launch_draft_version: {role: ignore}
+      include_has_translatable_content: {role: ignore}
+
+  - path: /canvas/data_series
+    method: GET
+    corpus: canvases_analytics
+    response:
+      pagination_style: none
+      wrapper:
+        records_key: data.stats
+    params:
+      canvas_id: {role: ignore}
+      length: {role: ignore}
+      ending_at: {role: ignore}
+      starting_at: {role: ignore}
+      include_variant_breakdown: {role: ignore}
+      include_step_breakdown: {role: ignore}
+      include_deleted_step_data: {role: ignore}
+    synthesize_future_records:
+      cursor_field: time
+      count: 3
+
+  # =====================================================================
+  # Segments
+  # =====================================================================
+  - path: /segments/list
+    method: GET
+    corpus: segments
+    response:
+      pagination_style: page_number
+      wrapper:
+        records_key: segments
+    params:
+      page: {role: page}
+      sort_direction: {role: ignore}
+
+  - path: /segments/details
+    method: GET
+    corpus: segments_details
+    response:
+      pagination_style: none
+    params:
+      segment_id: {role: ignore}
+
+  - path: /segments/data_series
+    method: GET
+    corpus: segments_analytics
+    response:
+      pagination_style: none
+      wrapper:
+        records_key: data
+    params:
+      segment_id: {role: ignore}
+      length: {role: ignore}
+      ending_at: {role: ignore}
+    synthesize_future_records:
+      cursor_field: time
+      count: 3
+
+  # =====================================================================
+  # Custom events
+  # =====================================================================
+  - path: /events/list
+    method: GET
+    corpus: events
+    response:
+      pagination_style: page_number
+      wrapper:
+        records_key: events
+    params:
+      page: {role: page}
+
+  - path: /events/data_series
+    method: GET
+    corpus: events_analytics
+    response:
+      pagination_style: none
+      wrapper:
+        records_key: data
+    params:
+      event: {role: ignore}
+      length: {role: ignore}
+      unit: {role: ignore}
+      ending_at: {role: ignore}
+      app_id: {role: ignore}
+      segment_id: {role: ignore}
+    synthesize_future_records:
+      cursor_field: time
+      count: 3
+
+  # =====================================================================
+  # News Feed cards (deprecated /feed/*)
+  # =====================================================================
+  - path: /feed/list
+    method: GET
+    corpus: cards
+    response:
+      pagination_style: page_number
+      wrapper:
+        records_key: cards
+    params:
+      page: {role: page}
+      include_archived: {role: ignore}
+      sort_direction: {role: ignore}
+
+  - path: /feed/data_series
+    method: GET
+    corpus: cards_analytics
+    response:
+      pagination_style: none
+      wrapper:
+        records_key: data
+    params:
+      card_id: {role: ignore}
+      length: {role: ignore}
+      ending_at: {role: ignore}
+    synthesize_future_records:
+      cursor_field: time
+      count: 3
+
+  # =====================================================================
+  # KPI series (workspace-level)
+  # =====================================================================
+  - path: /kpi/new_users/data_series
+    method: GET
+    corpus: kpi_daily_new_users
+    response:
+      pagination_style: none
+      wrapper:
+        records_key: data
+    params:
+      length: {role: ignore}
+      ending_at: {role: ignore}
+      app_id: {role: ignore}
+    synthesize_future_records:
+      cursor_field: time
+      count: 3
+
+  - path: /kpi/dau/data_series
+    method: GET
+    corpus: kpi_daily_active_users
+    response:
+      pagination_style: none
+      wrapper:
+        records_key: data
+    params:
+      length: {role: ignore}
+      ending_at: {role: ignore}
+      app_id: {role: ignore}
+    synthesize_future_records:
+      cursor_field: time
+      count: 3
+
+  - path: /kpi/mau/data_series
+    method: GET
+    corpus: kpi_monthly_active_users
+    response:
+      pagination_style: none
+      wrapper:
+        records_key: data
+    params:
+      length: {role: ignore}
+      ending_at: {role: ignore}
+      app_id: {role: ignore}
+    synthesize_future_records:
+      cursor_field: time
+      count: 3
+
+  - path: /kpi/uninstalls/data_series
+    method: GET
+    corpus: kpi_daily_app_uninstalls
+    response:
+      pagination_style: none
+      wrapper:
+        records_key: data
+    params:
+      length: {role: ignore}
+      ending_at: {role: ignore}
+      app_id: {role: ignore}
+    synthesize_future_records:
+      cursor_field: time
+      count: 3
+
+  # =====================================================================
+  # Purchases
+  # =====================================================================
+  - path: /purchases/product_list
+    method: GET
+    corpus: purchases_product_list
+    response:
+      pagination_style: page_number
+      wrapper:
+        records_key: products
+    params:
+      page: {role: page}
+
+  - path: /purchases/quantity_series
+    method: GET
+    corpus: purchases_quantity_series
+    response:
+      pagination_style: none
+      wrapper:
+        records_key: data
+    params:
+      length: {role: ignore}
+      ending_at: {role: ignore}
+      unit: {role: ignore}
+      app_id: {role: ignore}
+      product: {role: ignore}
+    synthesize_future_records:
+      cursor_field: time
+      count: 3
+
+  - path: /purchases/revenue_series
+    method: GET
+    corpus: purchases_revenue_series
+    response:
+      pagination_style: none
+      wrapper:
+        records_key: data
+    params:
+      length: {role: ignore}
+      ending_at: {role: ignore}
+      unit: {role: ignore}
+      app_id: {role: ignore}
+      product: {role: ignore}
+    synthesize_future_records:
+      cursor_field: time
+      count: 3
+
+  # =====================================================================
+  # Sends (campaign send-level analytics; 14-day retention)
+  # =====================================================================
+  - path: /sends/data_series
+    method: GET
+    corpus: sends_analytics
+    response:
+      pagination_style: none
+      wrapper:
+        records_key: data
+    params:
+      campaign_id: {role: ignore}
+      send_id: {role: ignore}
+      length: {role: ignore}
+      ending_at: {role: ignore}
+    synthesize_future_records:
+      cursor_field: time
+      count: 3

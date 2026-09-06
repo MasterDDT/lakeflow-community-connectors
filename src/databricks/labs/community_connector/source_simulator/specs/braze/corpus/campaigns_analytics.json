@@ -1,0 +1,67 @@
+[
+  {
+    "campaign_id": "hotel-63-pk0",
+    "time": "2024-01--pk0",
+    "conversions": 73683,
+    "conversions1": 63142,
+    "conversions2": 89381,
+    "conversions3": 19139,
+    "conversions_by_send_time": 69166,
+    "conversions1_by_send_time": 52957,
+    "unique_recipients": 24935,
+    "revenue": 63.31,
+    "messages": "delta-430"
+  },
+  {
+    "campaign_id": "golf-218-pk1",
+    "time": "2024-01--pk1",
+    "conversions": 19694,
+    "conversions1": 80222,
+    "conversions2": 40054,
+    "conversions3": 266,
+    "conversions_by_send_time": 73949,
+    "conversions1_by_send_time": 30489,
+    "unique_recipients": 42798,
+    "revenue": 160.9,
+    "messages": "juliet-484"
+  },
+  {
+    "campaign_id": "sierra-6-pk2",
+    "time": "2024-01--pk2",
+    "conversions": 29033,
+    "conversions1": 77493,
+    "conversions2": 52655,
+    "conversions3": 15760,
+    "conversions_by_send_time": 46899,
+    "conversions1_by_send_time": 87878,
+    "unique_recipients": 62556,
+    "revenue": 871.79,
+    "messages": "kilo-925"
+  },
+  {
+    "campaign_id": "zulu-242-pk3",
+    "time": "2024-01--pk3",
+    "conversions": 71361,
+    "conversions1": 13744,
+    "conversions2": 92642,
+    "conversions3": 53777,
+    "conversions_by_send_time": 92677,
+    "conversions1_by_send_time": 6089,
+    "unique_recipients": 69822,
+    "revenue": 668.36,
+    "messages": "mike-100"
+  },
+  {
+    "campaign_id": "tango-65-pk4",
+    "time": "2024-01--pk4",
+    "conversions": 65129,
+    "conversions1": 95621,
+    "conversions2": 59358,
+    "conversions3": 40580,
+    "conversions_by_send_time": 12288,
+    "conversions1_by_send_time": 24569,
+    "unique_recipients": 55250,
+    "revenue": 504.2,
+    "messages": "echo-896"
+  }
+]
