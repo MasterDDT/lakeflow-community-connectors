@@ -906,27 +906,90 @@ def register_lakeflow_source(spark):
     _APPEND = "append"
 
     TABLE_METADATA: dict[str, dict] = {
-        "campaigns": {"primary_keys": ["id"], "cursor_field": None, "ingestion_type": _SNAPSHOT},
-        "campaigns_details": {"primary_keys": ["campaign_id"], "cursor_field": None, "ingestion_type": _SNAPSHOT},
-        "campaigns_analytics": {"primary_keys": ["campaign_id", "time"], "cursor_field": "time", "ingestion_type": _APPEND},
-        "canvases": {"primary_keys": ["id"], "cursor_field": None, "ingestion_type": _SNAPSHOT},
-        "canvases_details": {"primary_keys": ["canvas_id"], "cursor_field": None, "ingestion_type": _SNAPSHOT},
-        "canvases_analytics": {"primary_keys": ["canvas_id", "time"], "cursor_field": "time", "ingestion_type": _APPEND},
-        "segments": {"primary_keys": ["id"], "cursor_field": None, "ingestion_type": _SNAPSHOT},
-        "segments_details": {"primary_keys": ["segment_id"], "cursor_field": None, "ingestion_type": _SNAPSHOT},
-        "segments_analytics": {"primary_keys": ["segment_id", "time"], "cursor_field": "time", "ingestion_type": _APPEND},
-        "events": {"primary_keys": ["event"], "cursor_field": None, "ingestion_type": _SNAPSHOT},
-        "events_analytics": {"primary_keys": ["event", "time"], "cursor_field": "time", "ingestion_type": _APPEND},
-        "cards": {"primary_keys": ["id"], "cursor_field": None, "ingestion_type": _SNAPSHOT},
-        "cards_analytics": {"primary_keys": ["card_id", "time"], "cursor_field": "time", "ingestion_type": _APPEND},
-        "kpi_daily_new_users": {"primary_keys": ["time"], "cursor_field": "time", "ingestion_type": _APPEND},
-        "kpi_daily_active_users": {"primary_keys": ["time"], "cursor_field": "time", "ingestion_type": _APPEND},
-        "kpi_monthly_active_users": {"primary_keys": ["time"], "cursor_field": "time", "ingestion_type": _APPEND},
-        "kpi_daily_app_uninstalls": {"primary_keys": ["time"], "cursor_field": "time", "ingestion_type": _APPEND},
-        "purchases_product_list": {"primary_keys": ["product"], "cursor_field": None, "ingestion_type": _SNAPSHOT},
-        "purchases_quantity_series": {"primary_keys": ["time"], "cursor_field": "time", "ingestion_type": _APPEND},
-        "purchases_revenue_series": {"primary_keys": ["time"], "cursor_field": "time", "ingestion_type": _APPEND},
-        "sends_analytics": {"primary_keys": ["campaign_id", "send_id", "time"], "cursor_field": "time", "ingestion_type": _APPEND},
+        "campaigns": {
+            "primary_keys": ["id"], "cursor_field": None,
+            "ingestion_type": _SNAPSHOT,
+        },
+        "campaigns_details": {
+            "primary_keys": ["campaign_id"], "cursor_field": None,
+            "ingestion_type": _SNAPSHOT,
+        },
+        "campaigns_analytics": {
+            "primary_keys": ["campaign_id", "time"], "cursor_field": "time",
+            "ingestion_type": _APPEND,
+        },
+        "canvases": {
+            "primary_keys": ["id"], "cursor_field": None,
+            "ingestion_type": _SNAPSHOT,
+        },
+        "canvases_details": {
+            "primary_keys": ["canvas_id"], "cursor_field": None,
+            "ingestion_type": _SNAPSHOT,
+        },
+        "canvases_analytics": {
+            "primary_keys": ["canvas_id", "time"], "cursor_field": "time",
+            "ingestion_type": _APPEND,
+        },
+        "segments": {
+            "primary_keys": ["id"], "cursor_field": None,
+            "ingestion_type": _SNAPSHOT,
+        },
+        "segments_details": {
+            "primary_keys": ["segment_id"], "cursor_field": None,
+            "ingestion_type": _SNAPSHOT,
+        },
+        "segments_analytics": {
+            "primary_keys": ["segment_id", "time"], "cursor_field": "time",
+            "ingestion_type": _APPEND,
+        },
+        "events": {
+            "primary_keys": ["event"], "cursor_field": None,
+            "ingestion_type": _SNAPSHOT,
+        },
+        "events_analytics": {
+            "primary_keys": ["event", "time"], "cursor_field": "time",
+            "ingestion_type": _APPEND,
+        },
+        "cards": {
+            "primary_keys": ["id"], "cursor_field": None,
+            "ingestion_type": _SNAPSHOT,
+        },
+        "cards_analytics": {
+            "primary_keys": ["card_id", "time"], "cursor_field": "time",
+            "ingestion_type": _APPEND,
+        },
+        "kpi_daily_new_users": {
+            "primary_keys": ["time"], "cursor_field": "time",
+            "ingestion_type": _APPEND,
+        },
+        "kpi_daily_active_users": {
+            "primary_keys": ["time"], "cursor_field": "time",
+            "ingestion_type": _APPEND,
+        },
+        "kpi_monthly_active_users": {
+            "primary_keys": ["time"], "cursor_field": "time",
+            "ingestion_type": _APPEND,
+        },
+        "kpi_daily_app_uninstalls": {
+            "primary_keys": ["time"], "cursor_field": "time",
+            "ingestion_type": _APPEND,
+        },
+        "purchases_product_list": {
+            "primary_keys": ["product"], "cursor_field": None,
+            "ingestion_type": _SNAPSHOT,
+        },
+        "purchases_quantity_series": {
+            "primary_keys": ["time"], "cursor_field": "time",
+            "ingestion_type": _APPEND,
+        },
+        "purchases_revenue_series": {
+            "primary_keys": ["time"], "cursor_field": "time",
+            "ingestion_type": _APPEND,
+        },
+        "sends_analytics": {
+            "primary_keys": ["campaign_id", "send_id", "time"],
+            "cursor_field": "time", "ingestion_type": _APPEND,
+        },
     }
 
 
@@ -958,28 +1021,72 @@ def register_lakeflow_source(spark):
     # Snapshot list streams: path + envelope key + whether the array holds bare
     # strings (event names / product names) rather than objects.
     LIST_STREAMS: dict[str, dict] = {
-        "campaigns": {"path": "/campaigns/list", "records_key": "campaigns", "page_size": _PAGE_SIZE_DEFAULT, "string_items": False},
-        "canvases": {"path": "/canvas/list", "records_key": "canvases", "page_size": _PAGE_SIZE_DEFAULT, "string_items": False},
-        "segments": {"path": "/segments/list", "records_key": "segments", "page_size": _PAGE_SIZE_DEFAULT, "string_items": False},
-        "events": {"path": "/events/list", "records_key": "events", "page_size": _PAGE_SIZE_EVENTS, "string_items": True, "string_field": "event"},
-        "cards": {"path": "/feed/list", "records_key": "cards", "page_size": _PAGE_SIZE_DEFAULT, "string_items": False},
-        "purchases_product_list": {"path": "/purchases/product_list", "records_key": "products", "page_size": _PAGE_SIZE_DEFAULT, "string_items": True, "string_field": "product"},
+        "campaigns": {
+            "path": "/campaigns/list", "records_key": "campaigns",
+            "page_size": _PAGE_SIZE_DEFAULT, "string_items": False,
+        },
+        "canvases": {
+            "path": "/canvas/list", "records_key": "canvases",
+            "page_size": _PAGE_SIZE_DEFAULT, "string_items": False,
+        },
+        "segments": {
+            "path": "/segments/list", "records_key": "segments",
+            "page_size": _PAGE_SIZE_DEFAULT, "string_items": False,
+        },
+        "events": {
+            "path": "/events/list", "records_key": "events",
+            "page_size": _PAGE_SIZE_EVENTS, "string_items": True,
+            "string_field": "event",
+        },
+        "cards": {
+            "path": "/feed/list", "records_key": "cards",
+            "page_size": _PAGE_SIZE_DEFAULT, "string_items": False,
+        },
+        "purchases_product_list": {
+            "path": "/purchases/product_list", "records_key": "products",
+            "page_size": _PAGE_SIZE_DEFAULT, "string_items": True,
+            "string_field": "product",
+        },
     }
 
     # Details streams: parent list source + per-id detail endpoint.
     DETAILS_STREAMS: dict[str, dict] = {
-        "campaigns_details": {"list_table": "campaigns", "detail_path": "/campaigns/details", "id_param": "campaign_id", "id_field": "campaign_id"},
-        "canvases_details": {"list_table": "canvases", "detail_path": "/canvas/details", "id_param": "canvas_id", "id_field": "canvas_id"},
-        "segments_details": {"list_table": "segments", "detail_path": "/segments/details", "id_param": "segment_id", "id_field": "segment_id"},
+        "campaigns_details": {
+            "list_table": "campaigns", "detail_path": "/campaigns/details",
+            "id_param": "campaign_id", "id_field": "campaign_id",
+        },
+        "canvases_details": {
+            "list_table": "canvases", "detail_path": "/canvas/details",
+            "id_param": "canvas_id", "id_field": "canvas_id",
+        },
+        "segments_details": {
+            "list_table": "segments", "detail_path": "/segments/details",
+            "id_param": "segment_id", "id_field": "segment_id",
+        },
     }
 
     # Fan-out analytics streams: parent list source + per-parent data_series call.
     FANOUT_STREAMS: dict[str, dict] = {
-        "campaigns_analytics": {"list_table": "campaigns", "data_path": "/campaigns/data_series", "records_key": "data", "id_param": "campaign_id", "id_field": "campaign_id"},
-        "canvases_analytics": {"list_table": "canvases", "data_path": "/canvas/data_series", "records_key": "data.stats", "id_param": "canvas_id", "id_field": "canvas_id"},
-        "segments_analytics": {"list_table": "segments", "data_path": "/segments/data_series", "records_key": "data", "id_param": "segment_id", "id_field": "segment_id"},
-        "events_analytics": {"list_table": "events", "data_path": "/events/data_series", "records_key": "data", "id_param": "event", "id_field": "event"},
-        "cards_analytics": {"list_table": "cards", "data_path": "/feed/data_series", "records_key": "data", "id_param": "card_id", "id_field": "card_id"},
+        "campaigns_analytics": {
+            "list_table": "campaigns", "data_path": "/campaigns/data_series",
+            "records_key": "data", "id_param": "campaign_id", "id_field": "campaign_id",
+        },
+        "canvases_analytics": {
+            "list_table": "canvases", "data_path": "/canvas/data_series",
+            "records_key": "data.stats", "id_param": "canvas_id", "id_field": "canvas_id",
+        },
+        "segments_analytics": {
+            "list_table": "segments", "data_path": "/segments/data_series",
+            "records_key": "data", "id_param": "segment_id", "id_field": "segment_id",
+        },
+        "events_analytics": {
+            "list_table": "events", "data_path": "/events/data_series",
+            "records_key": "data", "id_param": "event", "id_field": "event",
+        },
+        "cards_analytics": {
+            "list_table": "cards", "data_path": "/feed/data_series",
+            "records_key": "data", "id_param": "card_id", "id_field": "card_id",
+        },
     }
 
     # Workspace-level date-windowed series (no fan-out).
@@ -1257,8 +1364,7 @@ def register_lakeflow_source(spark):
                 items = body.get(records_key) if isinstance(body, dict) else None
                 if not items:
                     break
-                for item in items:
-                    yield item
+                yield from items
                 if len(items) < page_size:
                     break
                 page += 1

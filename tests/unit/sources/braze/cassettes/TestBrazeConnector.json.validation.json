@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-06T21:48:33.612361Z",
+  "generated_at": "2026-09-06T23:21:49.852489Z",
   "endpoints": [
     {
       "method": "GET",
@@ -18,8 +18,8 @@
       "spec_path": "/campaigns/details",
       "sample_url": "https://rest.fra-01.braze.eu/campaigns/details?campaign_id=21a019c7-e024-4790-b8ae-76622c9c3e09",
       "status": "validated",
-      "calls": 6,
-      "matched": 6,
+      "calls": 9,
+      "matched": 9,
       "mismatched": 0,
       "no_spec": 0,
       "issues": []
@@ -214,21 +214,19 @@
     {
       "method": "GET",
       "spec_path": "/sends/data_series",
-      "sample_url": "https://rest.fra-01.braze.eu/sends/data_series?campaign_id=1001&send_id=s1&length=14&ending_at=2026-09-06T00%3A00%3A00Z",
-      "status": "mismatched",
+      "sample_url": "https://rest.fra-01.braze.eu/sends/data_series?campaign_id=21a019c7-e024-4790-b8ae-76622c9c3e09&send_id=lakeflow_test_send_001&length=14&ending_at=2026-09-06T00%3A00%3A00Z",
+      "status": "validated",
       "calls": 2,
-      "matched": 0,
-      "mismatched": 2,
+      "matched": 2,
+      "mismatched": 0,
       "no_spec": 0,
-      "issues": [
-        "status_code: live=400 spec=200"
-      ]
+      "issues": []
     }
   ],
   "summary": {
     "endpoints_total": 20,
-    "endpoints_validated": 19,
-    "endpoints_mismatched": 1,
+    "endpoints_validated": 20,
+    "endpoints_mismatched": 0,
     "endpoints_missing_spec": 0
   }
 }

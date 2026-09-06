@@ -16,7 +16,7 @@
     {
       "method": "GET",
       "url": "https://rest.fra-01.braze.eu/campaigns/details",
-      "count": 6,
+      "count": 9,
       "param_shapes": [
         [
           "campaign_id"

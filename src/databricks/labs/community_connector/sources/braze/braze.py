@@ -317,8 +317,7 @@ class BrazeLakeflowConnect(LakeflowConnect, SupportsPartitionedStream):
             items = body.get(records_key) if isinstance(body, dict) else None
             if not items:
                 break
-            for item in items:
-                yield item
+            yield from items
             if len(items) < page_size:
                 break
             page += 1
