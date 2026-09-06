@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "generated_at": "2026-09-06T21:48:33.612361Z",
+  "endpoints": [
+    {
+      "method": "GET",
+      "spec_path": "/campaigns/data_series",
+      "sample_url": "https://rest.fra-01.braze.eu/campaigns/data_series?campaign_id=21a019c7-e024-4790-b8ae-76622c9c3e09&length=100&ending_at=2026-09-06T00%3A00%3A00Z",
+      "status": "validated",
+      "calls": 4,
+      "matched": 4,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/campaigns/details",
+      "sample_url": "https://rest.fra-01.braze.eu/campaigns/details?campaign_id=21a019c7-e024-4790-b8ae-76622c9c3e09",
+      "status": "validated",
+      "calls": 6,
+      "matched": 6,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/campaigns/list",
+      "sample_url": "https://rest.fra-01.braze.eu/campaigns/list?page=0",
+      "status": "validated",
+      "calls": 22,
+      "matched": 22,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/canvas/data_series",
+      "sample_url": "https://rest.fra-01.braze.eu/canvas/data_series?canvas_id=037cefb8-e9f4-42fa-b8a7-bd688b3216b7&length=14&ending_at=2026-09-06T00%3A00%3A00Z",
+      "status": "validated",
+      "calls": 4,
+      "matched": 4,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/canvas/details",
+      "sample_url": "https://rest.fra-01.braze.eu/canvas/details?canvas_id=037cefb8-e9f4-42fa-b8a7-bd688b3216b7",
+      "status": "validated",
+      "calls": 6,
+      "matched": 6,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/canvas/list",
+      "sample_url": "https://rest.fra-01.braze.eu/canvas/list?page=0",
+      "status": "validated",
+      "calls": 14,
+      "matched": 14,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/events/data_series",
+      "sample_url": "https://rest.fra-01.braze.eu/events/data_series?event=viewed_product&length=100&ending_at=2026-09-06T00%3A00%3A00Z",
+      "status": "validated",
+      "calls": 2,
+      "matched": 2,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/events/list",
+      "sample_url": "https://rest.fra-01.braze.eu/events/list?page=0",
+      "status": "validated",
+      "calls": 11,
+      "matched": 11,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/feed/list",
+      "sample_url": "https://rest.fra-01.braze.eu/feed/list?page=0",
+      "status": "validated",
+      "calls": 11,
+      "matched": 11,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/kpi/dau/data_series",
+      "sample_url": "https://rest.fra-01.braze.eu/kpi/dau/data_series?length=100&ending_at=2026-09-06T00%3A00%3A00Z",
+      "status": "validated",
+      "calls": 2,
+      "matched": 2,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/kpi/mau/data_series",
+      "sample_url": "https://rest.fra-01.braze.eu/kpi/mau/data_series?length=100&ending_at=2026-09-06T00%3A00%3A00Z",
+      "status": "validated",
+      "calls": 2,
+      "matched": 2,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/kpi/new_users/data_series",
+      "sample_url": "https://rest.fra-01.braze.eu/kpi/new_users/data_series?length=100&ending_at=2026-09-06T00%3A00%3A00Z",
+      "status": "validated",
+      "calls": 2,
+      "matched": 2,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/kpi/uninstalls/data_series",
+      "sample_url": "https://rest.fra-01.braze.eu/kpi/uninstalls/data_series?length=100&ending_at=2026-09-06T00%3A00%3A00Z",
+      "status": "validated",
+      "calls": 2,
+      "matched": 2,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/purchases/product_list",
+      "sample_url": "https://rest.fra-01.braze.eu/purchases/product_list?page=0",
+      "status": "validated",
+      "calls": 3,
+      "matched": 3,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/purchases/quantity_series",
+      "sample_url": "https://rest.fra-01.braze.eu/purchases/quantity_series?length=100&ending_at=2026-09-06T00%3A00%3A00Z",
+      "status": "validated",
+      "calls": 2,
+      "matched": 2,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/purchases/revenue_series",
+      "sample_url": "https://rest.fra-01.braze.eu/purchases/revenue_series?length=100&ending_at=2026-09-06T00%3A00%3A00Z",
+      "status": "validated",
+      "calls": 2,
+      "matched": 2,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/segments/data_series",
+      "sample_url": "https://rest.fra-01.braze.eu/segments/data_series?segment_id=0a54a01e-675d-4b41-b359-80f33af82567&length=100&ending_at=2026-09-06T00%3A00%3A00Z",
+      "status": "validated",
+      "calls": 4,
+      "matched": 4,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/segments/details",
+      "sample_url": "https://rest.fra-01.braze.eu/segments/details?segment_id=0a54a01e-675d-4b41-b359-80f33af82567",
+      "status": "validated",
+      "calls": 66,
+      "matched": 66,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/segments/list",
+      "sample_url": "https://rest.fra-01.braze.eu/segments/list?page=0",
+      "status": "validated",
+      "calls": 14,
+      "matched": 14,
+      "mismatched": 0,
+      "no_spec": 0,
+      "issues": []
+    },
+    {
+      "method": "GET",
+      "spec_path": "/sends/data_series",
+      "sample_url": "https://rest.fra-01.braze.eu/sends/data_series?campaign_id=1001&send_id=s1&length=14&ending_at=2026-09-06T00%3A00%3A00Z",
+      "status": "mismatched",
+      "calls": 2,
+      "matched": 0,
+      "mismatched": 2,
+      "no_spec": 0,
+      "issues": [
+        "status_code: live=400 spec=200"
+      ]
+    }
+  ],
+  "summary": {
+    "endpoints_total": 20,
+    "endpoints_validated": 19,
+    "endpoints_mismatched": 1,
+    "endpoints_missing_spec": 0
+  }
+}

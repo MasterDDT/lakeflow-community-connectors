@@ -1,121 +1,171 @@
-[
-  {
-    "canvas_id": "delta-80-pk0",
-    "created_at": "november-213",
-    "updated_at": "golf-621",
-    "name": "hotel-367",
-    "description": "papa-406",
-    "archived": true,
-    "draft": false,
-    "enabled": true,
-    "has_post_launch_draft": false,
-    "schedule_type": "tango-659",
-    "first_entry": "echo-918",
-    "last_entry": "mike-647",
-    "channels": [],
-    "variants": "papa-404",
-    "tags": [
-      "delta-456"
-    ],
-    "teams": [
-      "mike-560",
-      "lima-438"
-    ],
-    "steps": "papa-330"
-  },
-  {
-    "canvas_id": "kilo-167-pk1",
-    "created_at": "bravo-271",
-    "updated_at": "kilo-229",
-    "name": "alpha-112",
-    "description": "mike-910",
-    "archived": true,
-    "draft": true,
-    "enabled": false,
-    "has_post_launch_draft": true,
-    "schedule_type": "foxtrot-643",
-    "first_entry": "echo-808",
-    "last_entry": "xray-889",
-    "channels": [],
-    "variants": "alpha-127",
-    "tags": [
-      "golf-964",
-      "victor-491"
-    ],
-    "teams": [
-      "charlie-175"
-    ],
-    "steps": "zulu-580"
-  },
-  {
-    "canvas_id": "lima-636-pk2",
-    "created_at": "papa-366",
-    "updated_at": "foxtrot-408",
-    "name": "whiskey-364",
-    "description": "oscar-766",
-    "archived": false,
-    "draft": false,
-    "enabled": false,
-    "has_post_launch_draft": false,
-    "schedule_type": "foxtrot-563",
-    "first_entry": "oscar-518",
-    "last_entry": "alpha-698",
-    "channels": [],
-    "variants": "zulu-238",
-    "tags": [
-      "whiskey-520",
-      "echo-438"
-    ],
-    "teams": [
-      "hotel-476",
-      "lima-353"
-    ],
-    "steps": "delta-698"
-  },
-  {
-    "canvas_id": "tango-25-pk3",
-    "created_at": "mike-707",
-    "updated_at": "xray-971",
-    "name": "romeo-301",
-    "description": "bravo-144",
-    "archived": false,
-    "draft": true,
-    "enabled": true,
-    "has_post_launch_draft": false,
-    "schedule_type": "xray-300",
-    "first_entry": "november-396",
-    "last_entry": "november-383",
-    "channels": [
-      "sierra-435"
-    ],
-    "variants": "romeo-783",
-    "tags": [
-      "hotel-666",
-      "foxtrot-536"
-    ],
-    "teams": [],
-    "steps": "oscar-970"
-  },
-  {
-    "canvas_id": "victor-3-pk4",
-    "created_at": "charlie-692",
-    "updated_at": "november-760",
-    "name": "xray-411",
-    "description": "juliet-919",
-    "archived": false,
-    "draft": false,
-    "enabled": true,
-    "has_post_launch_draft": true,
-    "schedule_type": "bravo-753",
-    "first_entry": "november-735",
-    "last_entry": "yankee-247",
-    "channels": [],
-    "variants": "mike-870",
-    "tags": [],
-    "teams": [
-      "juliet-541",
-      "bravo-590"
-    ],
-    "steps": "tango-369"
-  }
-]
+{
+  "created_at": "2026-02-26T16:08:50+00:00",
+  "updated_at": "2026-07-08T17:50:41+00:00",
+  "name": "Copy of Back in Stock",
+  "description": "Let your customers know an item is back in stock with personalized messaging to drive purchases",
+  "archived": false,
+  "draft": true,
+  "enabled": false,
+  "has_post_launch_draft": false,
+  "schedule_type": "action_based",
+  "first_entry": null,
+  "last_entry": null,
+  "channels": [
+    "android_push",
+    "ios_push",
+    "sms",
+    "email",
+    "web_push"
+  ],
+  "variants": [
+    {
+      "id": "26b72f94-80c7-4674-a3ec-384b7d6a1b63",
+      "name": "Variant 1",
+      "first_step_ids": [
+        "44d6c987-67cc-4728-b9d6-7112e5f50100"
+      ],
+      "first_step_id": "44d6c987-67cc-4728-b9d6-7112e5f50100"
+    }
+  ],
+  "tags": [],
+  "teams": [],
+  "steps": [
+    {
+      "name": "Intelligent Channel",
+      "id": "44d6c987-67cc-4728-b9d6-7112e5f50100",
+      "type": "audience_paths",
+      "next_paths": [
+        {
+          "name": "Mobile Push",
+          "next_step_id": "5a53be38-7cdc-4a92-afdb-de71645fa98c"
+        },
+        {
+          "name": "Web Push",
+          "next_step_id": "a0900cff-fcc6-4f03-8b5a-fe22b67a154b"
+        },
+        {
+          "name": "SMS",
+          "next_step_id": "eecc32c8-5670-4588-be54-a972f12482b1"
+        },
+        {
+          "name": "Everyone Else",
+          "next_step_id": "f576ee98-d407-4e09-b4db-f33ea638f338"
+        }
+      ]
+    },
+    {
+      "name": "Mobile Push",
+      "id": "5a53be38-7cdc-4a92-afdb-de71645fa98c",
+      "type": "message",
+      "next_step_ids": [],
+      "next_paths": [
+        {
+          "name": null,
+          "next_step_id": "c9764098-5b8b-49c6-b333-b4116670df87"
+        }
+      ],
+      "channels": [
+        "android_push",
+        "ios_push"
+      ],
+      "messages": {
+        "bee61188-b302-4ac0-8485-53ba93c911a6": {
+          "channel": "android_push",
+          "alert": "{% catalog_items !!YOURCATALOGHERE!!\n {{canvas_entry_properties.${catalog_update}.item_id}} %}Good news! 😀 {{ items[0].Product_Name}} is back in stock! Hurry, there is only {{canvas_entry_properties.${catalog_update}.new_value}} in sotck!",
+          "title": "Hey {{${first_name} | default: 'friend'}}!",
+          "action": null,
+          "image_url": null,
+          "large_image_url": null
+        },
+        "f2e20595-9c5e-4e87-b829-b67355c851df": {
+          "channel": "ios_push",
+          "alert": "{% catalog_items !!YOURCATALOGHERE!!\n {{canvas_entry_properties.${catalog_update}.item_id}} %}Good news! 😀 {{ items[0].Product_Name}} is back in stock! Hurry, there is only {{canvas_entry_properties.${catalog_update}.new_value}} in stock!",
+          "title": "Hey {{${first_name} | default: 'friend'}}!",
+          "action": null,
+          "image_url": null,
+          "large_image_url": null
+        }
+      }
+    },
+    {
+      "name": "SMS",
+      "id": "eecc32c8-5670-4588-be54-a972f12482b1",
+      "type": "message",
+      "next_step_ids": [],
+      "next_paths": [
+        {
+          "name": null,
+          "next_step_id": "c9764098-5b8b-49c6-b333-b4116670df87"
+        }
+      ],
+      "channels": [
+        "sms"
+      ],
+      "messages": {
+        "10c0dade-cff9-44b5-a586-afaa0d6b7fc2": {
+          "channel": "sms",
+          "body": "Hey {{${first_name} | default: 'there'}}!\n{% catalog_items !!YOURCATALOGHERE!! {{canvas_entry_properties.${catalog_update}.item_id}} %}\nGood news! 😀!{{ items[0].Product_Name }} is back in stock, hurry now to secure yours!\n\n{{ items[0]. Product_Link }}\n\nReply STOP to stop texts at any time.",
+          "subscription_group_id": null,
+          "from": []
+        }
+      }
+    },
+    {
+      "name": "Email",
+      "id": "f576ee98-d407-4e09-b4db-f33ea638f338",
+      "type": "message",
+      "next_step_ids": [],
+      "next_paths": [
+        {
+          "name": null,
+          "next_step_id": "c9764098-5b8b-49c6-b333-b4116670df87"
+        }
+      ],
+      "channels": [
+        "email"
+      ],
+      "messages": {
+        "4af74d88-5fa1-4a9a-b46c-394626a62377": {
+          "channel": "email",
+          "subject": "Refreshed stock! Act fast before it's too late!",
+          "body": "<!DOCTYPE html><html xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" lang=\"en\"><head><title></title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><!--[if mso]>\n<xml><w:WordDocument xmlns:w=\"urn:schemas-microsoft-com:office:word\"><w:DontUseAdvancedTypographyReadingMail/></w:WordDocument>\n<o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml>\n<![endif]--><!--[if !mso]><!--><link href=\"https://fonts.googleapis.com/css?family=Abril+Fatface\" rel=\"stylesheet\" type=\"text/css\"><!--<![endif]--><style>\n*{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{color:inherit!important;text-decoration:inherit!important}#MessageViewBody a{color:inherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.desktop_hide table{mso-hide:all;display:none;max-height:0;overflow:hidden}.image_block img+div{display:none}sub,sup{font-size:75%;line-height:0}.menu_block.desktop_hide .menu-links span{mso-hide:all} @media (max-width:620px){.desktop_hide table.icons-inner{display:inline-block!important}.icons-inner{text-align:center}.icons-inner td{margin:0 auto}.image_block div.fullWidth{max-width:100%!important}.mobile_hide{display:none}.row-content{width:100%!important}.stack .column{width:100%;display:block}.mobile_hide{min-height:0;max-height:0;max-width:0;overflow:hidden;font-size:0}.desktop_hide,.desktop_hide table{display:table!important;max-height:none!important}}\n</style><!--[if mso ]><style>sup, sub { font-size: 100% !important; } sup { mso-text-raise:10% } sub { mso-text-raise:-10% }</style> <![endif]--></head><body class=\"body\" style=\"background-color:#fff;margin:0;padding:0;-webkit-text-size-adjust:none;text-size-adjust:none\"><table class=\"nl-container\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff\"><tbody><tr><td><table class=\"row row-1\" align=\"center\" \nwidth=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td><table class=\"row-content stack\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;color:#000;width:600px;margin:0 auto\" width=\"600\"><tbody><tr><td class=\"column column-1\" width=\"100%\" \nstyle=\"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5px;padding-top:5px;vertical-align:top\"><table class=\"html_block block-1\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"pad\"><div style=\"font-family:Nunito,Arial,Helvetica Neue,Helvetica,sans-serif;text-align:center\" align=\"center\">{% catalog_items !!YOURCATALOGHERE!! {{canvas_entry_properties.${catalog_update}.item_id}} %}\n<!--- This HTML block is not visible to recipients --!></div></td></tr></table><table class=\"image_block block-2\" \nwidth=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"pad\" style=\"padding-bottom:10px;padding-top:10px;width:100%;padding-right:0;padding-left:0\"><div class=\"alignment\" align=\"center\"><div style=\"max-width:150px\"><img src=\"https://braze-images.com/email_images/images/wow-its-time-to-treat-yourself/logo.png\" style=\"display:block;height:auto;border:0;width:100%\" width=\"150\" alt=\"Your Logo\" title=\"Your Logo\" \nheight=\"auto\"></div></div></td></tr></table><table class=\"menu_block block-3\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"pad\" style=\"color:#000;font-family:inherit;font-size:14px;padding-bottom:10px;padding-top:10px;text-align:center\"><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"alignment\" \nstyle=\"text-align:center;font-size:0\"><div class=\"menu-links\"><!--[if mso]><table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\" style=\"\"><tr style=\"text-align:center;\"><![endif]--><!--[if mso]><td style=\"padding-top:5px;padding-right:20px;padding-bottom:5px;padding-left:20px\"><![endif]-->\n<a href=\"http://www.example.com/?lid=3nqj0mmovpv0\" target=\"_self\" title=\"Link\" style=\"mso-hide:false;padding-top:5px;padding-bottom:5px;padding-left:20px;padding-right:20px;display:inline-block;color:#7c3c1d;font-family:Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:undefined;text-decoration:none;letter-spacing:normal;\">ABOUT US</a><!--[if mso]></td><![endif]-->\n<!--[if mso]><td style=\"padding-top:5px;padding-right:20px;padding-bottom:5px;padding-left:20px\"><![endif]--><a href=\"http://www.example.com/?lid=g15khzdee727\" target=\"_self\" title=\"Link\" style=\"mso-hide:false;padding-top:5px;padding-bottom:5px;padding-left:20px;padding-right:20px;display:inline-block;color:#7c3c1d;font-family:Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:undefined;text-decoration:none;letter-spacing:normal;\">SHOP MEN</a>\n<!--[if mso]></td><![endif]--><!--[if mso]><td style=\"padding-top:5px;padding-right:20px;padding-bottom:5px;padding-left:20px\"><![endif]-->\n<a href=\"http://www.example.com/?lid=h7bfhiby0raj\" target=\"_self\" title=\"Link\" style=\"mso-hide:false;padding-top:5px;padding-bottom:5px;padding-left:20px;padding-right:20px;display:inline-block;color:#7c3c1d;font-family:Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:undefined;text-decoration:none;letter-spacing:normal;\">SHOP WOMEN</a><!--[if mso]></td><![endif]-->\n<!--[if mso]><td style=\"padding-top:5px;padding-right:20px;padding-bottom:5px;padding-left:20px\"><![endif]--><a href=\"http://www.example.com/?lid=4bkq3vk4wv91\" target=\"_self\" title=\"Link\" style=\"mso-hide:false;padding-top:5px;padding-bottom:5px;padding-left:20px;padding-right:20px;display:inline-block;color:#7c3c1d;font-family:Nunito, Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:undefined;text-decoration:none;letter-spacing:normal;\">SHOP KIDS</a>\n<!--[if mso]></td><![endif]--><!--[if mso]></tr></table><![endif]--></div></td></tr></table></td></tr></table></td></tr></tbody></table></td></tr></tbody></table><table class=\"row row-2\" align=\"center\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td><table class=\"row-content stack\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" \nstyle=\"mso-table-lspace:0;mso-table-rspace:0;background-color:#fbf3e8;color:#000;width:600px;margin:0 auto\" width=\"600\"><tbody><tr><td class=\"column column-1\" width=\"100%\" style=\"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-top:5px;vertical-align:top\"><div class=\"spacer_block block-1\" style=\"height:30px;line-height:30px;font-size:1px\">&#8202;</div><table class=\"text_block block-2\" width=\"100%\" border=\"0\" cellpadding=\"5\" cellspacing=\"0\" role=\"presentation\" \nstyle=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tr><td class=\"pad\"><div style=\"font-family:sans-serif\"><div class style=\"font-size:12px;font-family:Nunito,Arial,Helvetica Neue,Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#7c3c1d;line-height:1.2\"><p style=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px\">WELCOME TO YOURBRAND</p></div></div></td></tr></table><table class=\"text_block block-3\" width=\"100%\" border=\"0\" cellpadding=\"5\" \ncellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tr><td class=\"pad\"><div style=\"font-family:Arial,sans-serif\"><div class style=\"font-size:12px;font-family:'Abril Fatface',Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#7c3c1d;line-height:1.2\"><p style=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px\">\n<span style=\"word-break: break-word; font-size: 34px;\">&nbsp;Good news!{{ items[0].Product_Name }} is back in stock!</span></p></div></div></td></tr></table><div class=\"spacer_block block-4\" style=\"height:30px;line-height:30px;font-size:1px\">&#8202;</div><table class=\"image_block block-5\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"pad\" style=\"width:100%\"><div class=\"alignment\" align=\"center\"><div \nstyle=\"max-width:600px\"><img src=\"https://braze-images.com/email_images/images/wow-its-time-to-treat-yourself/Header.png\" style=\"display:block;height:auto;border:0;width:100%\" width=\"600\" alt=\"I'm an Image\" title=\"I'm an Image\" height=\"auto\"></div></div></td></tr></table></td></tr></tbody></table></td></tr></tbody></table><table class=\"row row-3\" align=\"center\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr>\n<td><table class=\"row-content stack\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;background-color:#d9b497;color:#000;width:600px;margin:0 auto\" width=\"600\"><tbody><tr><td class=\"column column-1\" width=\"100%\" style=\"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top\"><div class=\"spacer_block block-1\" style=\"height:30px;line-height:30px;font-size:1px\">&#8202;</div></td></tr></tbody>\n</table></td></tr></tbody></table><table class=\"row row-4\" align=\"center\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td><table class=\"row-content stack\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;background-color:#d9b497;color:#000;width:600px;margin:0 auto\" width=\"600\"><tbody><tr><td class=\"column column-1\" width=\"100%\" \nstyle=\"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-align:top\"><div class=\"spacer_block block-1\" style=\"height:30px;line-height:30px;font-size:1px\">&#8202;</div><table class=\"text_block block-2\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tr><td class=\"pad\"><div style=\"font-family:Arial,sans-serif\"><div class \nstyle=\"font-size:12px;font-family:'Abril Fatface',Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#fbf3e8;line-height:1.2\"><p style=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px\"><span style=\"word-break: break-word; font-size: 34px;\">Our Brand Meets Your Style</span></p></div></div></td></tr></table><table class=\"divider_block block-3\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" \nstyle=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"pad\" style=\"padding-left:10px;padding-right:10px\"><div class=\"alignment\" align=\"center\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" width=\"10%\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"divider_inner\" style=\"font-size:1px;line-height:1px;border-top:1px solid #fbf3e8\"><span style=\"word-break: break-word;\">&#8202;</span></td></tr></table></div></td></tr></table><table \nclass=\"text_block block-4\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tr><td class=\"pad\" style=\"padding-bottom:10px;padding-left:35px;padding-right:35px;padding-top:10px\"><div style=\"font-family:sans-serif\"><div class style=\"font-size:12px;font-family:Nunito,Arial,Helvetica Neue,Helvetica,sans-serif;mso-line-height-alt:21.6px;color:#fbf3e8;line-height:1.8\"><p \nstyle=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:25.2px\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div></div></td></tr></table><table class=\"button_block block-5\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" role=\"presentation\" \nstyle=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"pad\"><div class=\"alignment\" align=\"center\"><a href=\"http://www.example.com/?lid=ps00lah0dyhi\" target=\"_blank\" style=\"color:#fbf3e8;text-decoration:none;\"><!--[if mso]>\n<v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-microsoft-com:office:word\"  href=\"http://www.example.com/?lid=ps00lah0dyhi\"  style=\"height:37px;width:110px;v-text-anchor:middle;\" arcsize=\"20%\" fill=\"false\">\n<v:stroke dashstyle=\"Solid\" weight=\"1px\" color=\"#FBF3E8\"/>\n<w:anchorlock/>\n<v:textbox inset=\"0px,0px,0px,0px\">\n<center dir=\"false\" style=\"color:#fbf3e8;font-family:sans-serif;font-size:14px\">\n<![endif]-->\n<span class=\"button\" style=\"background-color: transparent; mso-shading: transparent; border-bottom: 1px solid #FBF3E8; border-left: 1px solid #FBF3E8; border-radius: 8px; border-right: 1px solid #FBF3E8; border-top: 1px solid #FBF3E8; color: #fbf3e8; display: inline-block; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 14px; font-weight: undefined; mso-border-alt: none; padding-bottom: 5px; padding-top: 5px; padding-left: 20px; padding-right: 20px; text-align: center; width: auto; word-break: keep-all; letter-spacing: normal;\"><span style=\"word-break: break-word;\"><span style=\"word-break: break-word; line-height: 28px;\" data-mce-style>Learn More</span></span></span>\n<!--[if mso]></center></v:textbox></v:roundrect><![endif]--></a></div></td></tr></table><div class=\"spacer_block block-6\" style=\"height:30px;line-height:30px;font-size:1px\">&#8202;</div></td></tr></tbody></table></td></tr></tbody></table><table class=\"row row-5\" align=\"center\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td><table class=\"row-content stack\" align=\"center\" border=\"0\" cellpadding=\"0\" \ncellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;background-color:#d9b497;color:#000;width:600px;margin:0 auto\" width=\"600\"><tbody><tr><td class=\"column column-1\" width=\"100%\" style=\"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;background-color:#f1f1f1;border-bottom:20px solid #d9b497;border-left:20px solid #d9b497;border-right:20px solid #d9b497;border-top:20px solid #d9b497;vertical-align:top\"><table class=\"image_block block-1\" \nwidth=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"pad\" style=\"width:100%\"><div class=\"alignment\" align=\"center\"><div class=\"fullWidth\" style=\"max-width:486px\"><img src=\"{{items[0].Product_Image}}\" style=\"display:block;height:auto;border:0;width:100%\" width=\"486\" alt=\"I'm a Product Image\" title=\"I'm a Product Image\" height=\"auto\"></div></div></td></tr></table><table class=\"text_block block-2\" width=\"100%\" \nborder=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tr><td class=\"pad\" style=\"padding-bottom:5px;padding-left:5px;padding-right:5px;padding-top:15px\"><div style=\"font-family:sans-serif\"><div class style=\"font-size:12px;font-family:Nunito,Arial,Helvetica Neue,Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#979797;line-height:1.2\"><p \nstyle=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px\">LOREM</p></div></div></td></tr></table><table class=\"text_block block-3\" width=\"100%\" border=\"0\" cellpadding=\"5\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tr><td class=\"pad\"><div style=\"font-family:sans-serif\"><div class \nstyle=\"font-size:12px;font-family:Nunito,Arial,Helvetica Neue,Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#7c3c1d;line-height:1.2\"><p style=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px\"><strong><span style=\"word-break: break-word; font-size: 18px;\">{{items[0].Product_Name}}</span></strong></p></div></div></td></tr></table><table class=\"text_block block-4\" width=\"100%\" border=\"0\" cellpadding=\"5\" cellspacing=\"0\" role=\"presentation\" \nstyle=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tr><td class=\"pad\"><div style=\"font-family:sans-serif\"><div class style=\"font-size:12px;font-family:Nunito,Arial,Helvetica Neue,Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#ba7e4f;line-height:1.2\"><p style=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px\">Starting ${{items[0].Product_Price}}</p></div></div></td></tr></table><table class=\"button_block block-5\" width=\"100%\" border=\"0\" \ncellpadding=\"15\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"pad\"><div class=\"alignment\" align=\"center\"><a href=\"{{items[0].Product_Link}}\" target=\"_blank\" style=\"color:#7c3c1d;text-decoration:none;\"><!--[if mso]>\n<v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-microsoft-com:office:word\"  href=\"{{items[0].Product_Link}}\"  style=\"height:37px;width:103px;v-text-anchor:middle;\" arcsize=\"20%\" fill=\"false\">\n<v:stroke dashstyle=\"Solid\" weight=\"1px\" color=\"#7C3C1D\"/>\n<w:anchorlock/>\n<v:textbox inset=\"0px,0px,0px,0px\">\n<center dir=\"false\" style=\"color:#7c3c1d;font-family:sans-serif;font-size:14px\">\n<![endif]-->\n<span class=\"button\" style=\"background-color: transparent; mso-shading: transparent; border-bottom: 1px solid #7C3C1D; border-left: 1px solid #7C3C1D; border-radius: 8px; border-right: 1px solid #7C3C1D; border-top: 1px solid #7C3C1D; color: #7c3c1d; display: inline-block; font-family: Nunito, Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 14px; font-weight: undefined; mso-border-alt: none; padding-bottom: 5px; padding-top: 5px; padding-left: 20px; padding-right: 20px; text-align: center; width: auto; word-break: keep-all; letter-spacing: normal;\"><span style=\"word-break: break-word;\"><span style=\"word-break: break-word; line-height: 28px;\" data-mce-style>Shop Now</span></span></span>\n<!--[if mso]></center></v:textbox></v:roundrect><![endif]--></a></div></td></tr></table></td></tr></tbody></table></td></tr></tbody></table><table class=\"row row-6\" align=\"center\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td><table class=\"row-content stack\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" \nstyle=\"mso-table-lspace:0;mso-table-rspace:0;background-color:#d9b497;color:#000;width:600px;margin:0 auto\" width=\"600\"><tbody><tr><td class=\"column column-1\" width=\"33.333333333333336%\" \nstyle=\"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;background-color:#baaca1;border-bottom:20px solid #d9b497;border-left:20px solid #d9b497;border-right:20px solid #d9b497;border-top:20px solid #d9b497;padding-bottom:15px;padding-left:15px;padding-right:15px;padding-top:15px;vertical-align:top\"><table class=\"text_block block-1\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\">\n<tr><td class=\"pad\"><div style=\"font-family:Arial,sans-serif\"><div class style=\"font-size:12px;font-family:'Abril Fatface',Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#fbf3e8;line-height:1.2\"><p style=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px\">Shop</p></div></div></td></tr></table><table class=\"text_block block-2\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" \nstyle=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tr><td class=\"pad\"><div style=\"font-family:Arial,sans-serif\"><div class style=\"font-size:12px;font-family:'Abril Fatface',Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#fbf3e8;line-height:1.2\"><p style=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px\"><span style=\"word-break: break-word; font-size: 34px;\">Men</span></p></div></div></td></tr></table><table \nclass=\"image_block block-3\" width=\"100%\" border=\"0\" cellpadding=\"5\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"pad\"><div class=\"alignment\" align=\"center\"><div style=\"max-width:32.5px\"><img src=\"https://braze-images.com/email_images/images/wow-its-time-to-treat-yourself/polygon.png\" style=\"display:block;height:auto;border:0;width:100%\" width=\"32.5\" alt=\"I'm an Image\" title=\"I'm an Image\" height=\"auto\"></div></div></td></tr></table></td><td \nclass=\"column column-2\" width=\"33.333333333333336%\" style=\"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;background-color:#baaca1;border-bottom:20px solid #d9b497;border-left:20px solid #d9b497;border-right:20px solid #d9b497;border-top:20px solid #d9b497;padding-bottom:15px;padding-left:15px;padding-right:15px;padding-top:15px;vertical-align:top\"><table class=\"text_block block-1\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" \nstyle=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tr><td class=\"pad\"><div style=\"font-family:Arial,sans-serif\"><div class style=\"font-size:12px;font-family:'Abril Fatface',Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#fbf3e8;line-height:1.2\"><p style=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px\">Shop</p></div></div></td></tr></table><table class=\"text_block block-2\" width=\"100%\" border=\"0\" cellpadding=\"0\" \ncellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tr><td class=\"pad\"><div style=\"font-family:Arial,sans-serif\"><div class style=\"font-size:12px;font-family:'Abril Fatface',Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#fbf3e8;line-height:1.2\"><p style=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px\"><span style=\"word-break: break-word; font-size: 34px;\">Women</span></p></div>\n</div></td></tr></table><table class=\"image_block block-3\" width=\"100%\" border=\"0\" cellpadding=\"5\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"pad\"><div class=\"alignment\" align=\"center\"><div style=\"max-width:32.5px\"><img src=\"https://braze-images.com/email_images/images/wow-its-time-to-treat-yourself/polygon.png\" style=\"display:block;height:auto;border:0;width:100%\" width=\"32.5\" alt=\"I'm an Image\" title=\"I'm an Image\" height=\"auto\"></div>\n</div></td></tr></table></td><td class=\"column column-3\" width=\"33.333333333333336%\" style=\"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;background-color:#baaca1;border-bottom:20px solid #d9b497;border-left:20px solid #d9b497;border-right:20px solid #d9b497;border-top:20px solid #d9b497;padding-bottom:15px;padding-left:15px;padding-right:15px;padding-top:15px;vertical-align:top\"><table class=\"text_block block-1\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" \nrole=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tr><td class=\"pad\"><div style=\"font-family:Arial,sans-serif\"><div class style=\"font-size:12px;font-family:'Abril Fatface',Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#fbf3e8;line-height:1.2\"><p style=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px\">Shop</p></div></div></td></tr></table><table class=\"text_block block-2\" width=\"100%\" \nborder=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tr><td class=\"pad\"><div style=\"font-family:Arial,sans-serif\"><div class style=\"font-size:12px;font-family:'Abril Fatface',Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#fbf3e8;line-height:1.2\"><p style=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px\">\n<span style=\"word-break: break-word; font-size: 34px;\">Kids</span></p></div></div></td></tr></table><table class=\"image_block block-3\" width=\"100%\" border=\"0\" cellpadding=\"5\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"pad\"><div class=\"alignment\" align=\"center\"><div style=\"max-width:32.5px\"><img src=\"https://braze-images.com/email_images/images/wow-its-time-to-treat-yourself/polygon.png\" style=\"display:block;height:auto;border:0;width:100%\" \nwidth=\"32.5\" alt=\"I'm an Image\" title=\"I'm an Image\" height=\"auto\"></div></div></td></tr></table></td></tr></tbody></table></td></tr></tbody></table><table class=\"row row-7\" align=\"center\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tbody><tr><td><table class=\"row-content stack\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" \nstyle=\"mso-table-lspace:0;mso-table-rspace:0;background-color:#f1f1f1;color:#000;width:600px;margin:0 auto\" width=\"600\"><tbody><tr><td class=\"column column-1\" width=\"100%\" style=\"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5px;padding-top:5px;vertical-align:top\"><table class=\"icons_block block-1\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;text-align:center;line-height:0\"><tr><td\n class=\"pad\" style=\"vertical-align:middle;color:#7c3c1d;font-family:inherit;font-size:14px;text-align:center\"><!--[if vml]><table align=\"left\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"display:inline-block;padding-left:0px;padding-right:10px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;\" ><![endif]--><!--[if !vml]><!--><table class=\"icons-inner\" style=\"mso-table-lspace:0;mso-table-rspace:0;display:inline-block;padding-left:0;padding-right:10px\" cellpadding=\"0\" cellspacing=\"0\" \nrole=\"presentation\"><!--<![endif]--><tr><td style=\"vertical-align:middle;text-align:center;padding-top:10px;padding-bottom:5px;padding-left:15px;padding-right:15px\"><img class=\"icon\" alt=\"FIND A STORE\" src=\"https://braze-images.com/email_images/images/wow-its-time-to-treat-yourself/location.png\" height=\"auto\" width=\"32\" align=\"center\" style=\"display:block;height:auto;margin:0 auto;border:0\"></td></tr><tr><td \nstyle=\"font-family:Nunito,Arial,Helvetica Neue,Helvetica,sans-serif;font-size:14px;font-weight:undefined;color:#7c3c1d;vertical-align:middle;letter-spacing:normal;text-align:center;line-height:normal\">FIND A STORE</td></tr></table><!--[if vml]><table align=\"left\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"display:inline-block;padding-left:10px;padding-right:10px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;\" ><![endif]--><!--[if !vml]><!--><table class=\"icons-inner\" \nstyle=\"mso-table-lspace:0;mso-table-rspace:0;display:inline-block;padding-left:10px;padding-right:10px\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\"><!--<![endif]--><tr><td style=\"vertical-align:middle;text-align:center;padding-top:10px;padding-bottom:5px;padding-left:15px;padding-right:15px\"><img class=\"icon\" alt=\"FREE SHIPPING\" src=\"https://braze-images.com/email_images/images/wow-its-time-to-treat-yourself/transport.png\" height=\"auto\" width=\"32\" align=\"center\" \nstyle=\"display:block;height:auto;margin:0 auto;border:0\"></td></tr><tr><td style=\"font-family:Nunito,Arial,Helvetica Neue,Helvetica,sans-serif;font-size:14px;font-weight:undefined;color:#7c3c1d;vertical-align:middle;letter-spacing:normal;text-align:center;line-height:normal\">FREE SHIPPING</td></tr></table>\n<!--[if vml]><table align=\"left\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"display:inline-block;padding-left:10px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;\" ><![endif]--><!--[if !vml]><!--><table class=\"icons-inner\" style=\"mso-table-lspace:0;mso-table-rspace:0;display:inline-block;padding-left:10px;padding-right:0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\"><!--<![endif]--><tr><td \nstyle=\"vertical-align:middle;text-align:center;padding-top:10px;padding-bottom:5px;padding-left:15px;padding-right:15px\"><img class=\"icon\" alt=\"FREE RETURNS\" src=\"https://braze-images.com/email_images/images/wow-its-time-to-treat-yourself/box.png\" height=\"auto\" width=\"32\" align=\"center\" style=\"display:block;height:auto;margin:0 auto;border:0\"></td></tr><tr><td \nstyle=\"font-family:Nunito,Arial,Helvetica Neue,Helvetica,sans-serif;font-size:14px;font-weight:undefined;color:#7c3c1d;vertical-align:middle;letter-spacing:normal;text-align:center;line-height:normal\">FREE RETURNS</td></tr></table></td></tr></table><table class=\"divider_block block-2\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"pad\" \nstyle=\"padding-bottom:20px;padding-left:10px;padding-right:10px;padding-top:20px\"><div class=\"alignment\" align=\"center\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" width=\"90%\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"divider_inner\" style=\"font-size:1px;line-height:1px;border-top:1px solid #d9b497\"><span style=\"word-break: break-word;\">&#8202;</span></td></tr></table></div></td></tr></table><table class=\"image_block block-3\" width=\"100%\" border=\"0\" \ncellpadding=\"15\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0\"><tr><td class=\"pad\"><div class=\"alignment\" align=\"center\"><div style=\"max-width:120px\"><a href=\"http://www.example.com?lid=s0n0ztvxru2p\" target=\"_blank\"><img src=\"https://braze-images.com/email_images/images/wow-its-time-to-treat-yourself/logo.png\" style=\"display:block;height:auto;border:0;width:100%\" width=\"120\" alt=\"Your Logo\" title=\"Your Logo\" height=\"auto\"></a></div></div></td>\n</tr></table><table class=\"text_block block-4\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word\"><tr><td class=\"pad\"><div style=\"font-family:sans-serif\"><div class style=\"font-size:12px;font-family:Nunito,Arial,Helvetica Neue,Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#979797;line-height:1.2\"><p style=\"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px\">\n<span style=\"word-break: break-word; font-size: 12px;\">© 2020 Your Brand. All Rights Reserved.</span></p></div></div></td></tr></table><div class=\"spacer_block block-5\" style=\"height:20px;line-height:20px;font-size:1px\">&#8202;</div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><!-- End --></body></html>",
+          "from": "No Reply <redacted@example.com>",
+          "reply_to": null,
+          "title": null,
+          "amp_body": "",
+          "preheader": "",
+          "custom_plain_text": null,
+          "should_inline_css": false,
+          "should_whitespace_preheader": false,
+          "headers": null
+        }
+      }
+    },
+    {
+      "name": "Web Push",
+      "id": "a0900cff-fcc6-4f03-8b5a-fe22b67a154b",
+      "type": "message",
+      "next_step_ids": [],
+      "next_paths": [
+        {
+          "name": null,
+          "next_step_id": "c9764098-5b8b-49c6-b333-b4116670df87"
+        }
+      ],
+      "channels": [
+        "web_push"
+      ],
+      "messages": {
+        "128bce42-b72f-4dbf-96c7-00531ec97aba": {
+          "channel": "web_push",
+          "alert": "{% catalog_items !!YOURCATALOGHERE!! {{canvas_entry_properties.${catalog_update}.item_id}} %}Good news! 😀 {{ items[0].Product_Name }} is back in stock! Hurry, there is only {{canvas_entry_properties.${catalog_update}.new_value}} in stock!",
+          "title": "Hey {{${first_name} | default: 'friend'}}!",
+          "action": null,
+          "image_url": null,
+          "large_image_url": null
+        }
+      }
+    }
+  ],
+  "message": "success"
+}

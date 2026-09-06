@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "endpoints": [
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/campaigns/data_series",
+      "count": 4,
+      "param_shapes": [
+        [
+          "campaign_id",
+          "ending_at",
+          "length"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/campaigns/details",
+      "count": 6,
+      "param_shapes": [
+        [
+          "campaign_id"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/campaigns/list",
+      "count": 22,
+      "param_shapes": [
+        [
+          "page"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/canvas/data_series",
+      "count": 4,
+      "param_shapes": [
+        [
+          "canvas_id",
+          "ending_at",
+          "length"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/canvas/details",
+      "count": 6,
+      "param_shapes": [
+        [
+          "canvas_id"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/canvas/list",
+      "count": 14,
+      "param_shapes": [
+        [
+          "page"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/events/data_series",
+      "count": 2,
+      "param_shapes": [
+        [
+          "ending_at",
+          "event",
+          "length"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/events/list",
+      "count": 11,
+      "param_shapes": [
+        [
+          "page"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/feed/list",
+      "count": 11,
+      "param_shapes": [
+        [
+          "page"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/kpi/dau/data_series",
+      "count": 2,
+      "param_shapes": [
+        [
+          "ending_at",
+          "length"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/kpi/mau/data_series",
+      "count": 2,
+      "param_shapes": [
+        [
+          "ending_at",
+          "length"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/kpi/new_users/data_series",
+      "count": 2,
+      "param_shapes": [
+        [
+          "ending_at",
+          "length"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/kpi/uninstalls/data_series",
+      "count": 2,
+      "param_shapes": [
+        [
+          "ending_at",
+          "length"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/purchases/product_list",
+      "count": 3,
+      "param_shapes": [
+        [
+          "page"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/purchases/quantity_series",
+      "count": 2,
+      "param_shapes": [
+        [
+          "ending_at",
+          "length"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/purchases/revenue_series",
+      "count": 2,
+      "param_shapes": [
+        [
+          "ending_at",
+          "length"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/segments/data_series",
+      "count": 4,
+      "param_shapes": [
+        [
+          "ending_at",
+          "length",
+          "segment_id"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/segments/details",
+      "count": 66,
+      "param_shapes": [
+        [
+          "segment_id"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/segments/list",
+      "count": 14,
+      "param_shapes": [
+        [
+          "page"
+        ]
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://rest.fra-01.braze.eu/sends/data_series",
+      "count": 2,
+      "param_shapes": [
+        [
+          "campaign_id",
+          "ending_at",
+          "length",
+          "send_id"
+        ]
+      ]
+    }
+  ]
+}

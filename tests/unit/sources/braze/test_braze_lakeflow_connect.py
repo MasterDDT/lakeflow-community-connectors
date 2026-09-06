@@ -48,6 +48,25 @@ class TestBrazeConnector(LakeflowConnectTests, SupportsPartitionedStreamTests):
     # without explicit pairs the stream produces no partitions. Supply pairs
     # via the ``send_ids`` table option (comma-separated ``campaign_id:send_id``
     # tokens) so the partitioned-read tests have parents to fan out over.
+    # The pair below is a real send registered on the EU test workspace via
+    # /sends/id/create + /campaigns/trigger/send (campaign "Test Email Campaign"),
+    # so /sends/data_series returns live data in record mode. The simulator
+    # ignores the value in simulate mode and serves the corpus.
     table_configs = {
-        "sends_analytics": {"send_ids": "1001:s1,1002:s2"},
+        "sends_analytics": {
+            "send_ids": "21a019c7-e024-4790-b8ae-76622c9c3e09:lakeflow_test_send_001",
+        },
+    }
+
+    # Lifecycle-timestamp columns the live source genuinely returns as null for
+    # the recorded corpus record. ``/…/details`` are ``single_entity`` streams,
+    # so the corpus holds exactly one detail object per stream (the one recorded
+    # from the live workspace). The recorded campaign was never sent
+    # (``first_sent``/``last_sent`` = null) and the recorded Canvas is an unsent
+    # draft (``first_entry``/``last_entry`` = null); these fields only populate
+    # once the entity has been sent/entered. No corpus record can exercise them,
+    # so they are exempt from the column-population invariant.
+    allow_null_columns = {
+        "campaigns_details": {"first_sent", "last_sent"},
+        "canvases_details": {"first_entry", "last_entry"},
     }

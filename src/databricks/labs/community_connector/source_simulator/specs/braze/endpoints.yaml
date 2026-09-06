@@ -2,6 +2,17 @@
 #
 # Auth is a Bearer API key and is ignored by the simulator.
 #
+# Every Braze REST response carries a top-level ``"message": "success"`` field
+# alongside its payload (confirmed against the live EU instance). It is modelled
+# here so the live validator sees the simulator reproduce it:
+#   * flat wrappers declare ``extras: {message: success}`` so the handler emits
+#     it at the top level next to the records key;
+#   * the Canvas ``data_series`` wrapper is nested (``data.stats``) so ``extras``
+#     would land inside ``data`` rather than at the top level — it uses
+#     ``ignore_extra_keys: true`` instead;
+#   * the ``/…/details`` endpoints are ``single_entity`` and serve the raw
+#     detail object from the corpus, which already contains ``message``.
+#
 # Two response families:
 #   * List endpoints (/campaigns/list, /canvas/list, /segments/list,
 #     /events/list, /feed/list, /purchases/product_list) — 0-indexed ``page``
@@ -19,12 +30,14 @@
 #     can verify the connector caps its returned offset at the init snapshot.
 #
 # The ``/…/details`` endpoints return a single object at the top level in the
-# real API; the simulator serves the bootstrapped JSON array and the connector
-# takes the first element (then stamps the parent id), so no wrapper/single_entity
-# is declared for them.
+# real API (``{"...detail fields...", "message": "success"}``), so they declare
+# ``single_entity: true`` and the corpus holds one detail object per stream.
+# The connector takes that object (``body[0]`` for a legacy list corpus, else
+# the object itself) and stamps the parent id, so every fanned-out call yields
+# a distinct primary key.
 #
 # Each ``corpus`` name matches a table so connector-tester can bootstrap it
-# from that table's schema.
+# from that table's schema (and re-seed it from a recorded cassette).
 
 endpoints:
   # =====================================================================
@@ -37,6 +50,8 @@ endpoints:
       pagination_style: page_number
       wrapper:
         records_key: campaigns
+        extras:
+          message: success
     params:
       page: {role: page}
       include_archived: {role: ignore}
@@ -48,6 +63,7 @@ endpoints:
     corpus: campaigns_details
     response:
       pagination_style: none
+      single_entity: true
     params:
       campaign_id: {role: ignore}
       post_launch_draft_version: {role: ignore}
@@ -60,6 +76,8 @@ endpoints:
       pagination_style: none
       wrapper:
         records_key: data
+        extras:
+          message: success
     params:
       campaign_id: {role: ignore}
       length: {role: ignore}
@@ -78,6 +96,8 @@ endpoints:
       pagination_style: page_number
       wrapper:
         records_key: canvases
+        extras:
+          message: success
     params:
       page: {role: page}
       include_archived: {role: ignore}
@@ -89,6 +109,7 @@ endpoints:
     corpus: canvases_details
     response:
       pagination_style: none
+      single_entity: true
     params:
       canvas_id: {role: ignore}
       post_launch_draft_version: {role: ignore}
@@ -100,7 +121,11 @@ endpoints:
     response:
       pagination_style: none
       wrapper:
+        # Canvas nests its records under ``data.stats``; ``extras`` would land
+        # inside ``data`` rather than at the top level, so the top-level
+        # ``message`` field is tolerated via ignore_extra_keys instead.
         records_key: data.stats
+        ignore_extra_keys: true
     params:
       canvas_id: {role: ignore}
       length: {role: ignore}
@@ -123,6 +148,8 @@ endpoints:
       pagination_style: page_number
       wrapper:
         records_key: segments
+        extras:
+          message: success
     params:
       page: {role: page}
       sort_direction: {role: ignore}
@@ -132,6 +159,7 @@ endpoints:
     corpus: segments_details
     response:
       pagination_style: none
+      single_entity: true
     params:
       segment_id: {role: ignore}
 
@@ -142,6 +170,8 @@ endpoints:
       pagination_style: none
       wrapper:
         records_key: data
+        extras:
+          message: success
     params:
       segment_id: {role: ignore}
       length: {role: ignore}
@@ -160,6 +190,8 @@ endpoints:
       pagination_style: page_number
       wrapper:
         records_key: events
+        extras:
+          message: success
     params:
       page: {role: page}
 
@@ -170,6 +202,8 @@ endpoints:
       pagination_style: none
       wrapper:
         records_key: data
+        extras:
+          message: success
     params:
       event: {role: ignore}
       length: {role: ignore}
@@ -191,6 +225,8 @@ endpoints:
       pagination_style: page_number
       wrapper:
         records_key: cards
+        extras:
+          message: success
     params:
       page: {role: page}
       include_archived: {role: ignore}
@@ -203,6 +239,8 @@ endpoints:
       pagination_style: none
       wrapper:
         records_key: data
+        extras:
+          message: success
     params:
       card_id: {role: ignore}
       length: {role: ignore}
@@ -221,6 +259,8 @@ endpoints:
       pagination_style: none
       wrapper:
         records_key: data
+        extras:
+          message: success
     params:
       length: {role: ignore}
       ending_at: {role: ignore}
@@ -236,6 +276,8 @@ endpoints:
       pagination_style: none
       wrapper:
         records_key: data
+        extras:
+          message: success
     params:
       length: {role: ignore}
       ending_at: {role: ignore}
@@ -251,6 +293,8 @@ endpoints:
       pagination_style: none
       wrapper:
         records_key: data
+        extras:
+          message: success
     params:
       length: {role: ignore}
       ending_at: {role: ignore}
@@ -266,6 +310,8 @@ endpoints:
       pagination_style: none
       wrapper:
         records_key: data
+        extras:
+          message: success
     params:
       length: {role: ignore}
       ending_at: {role: ignore}
@@ -284,6 +330,8 @@ endpoints:
       pagination_style: page_number
       wrapper:
         records_key: products
+        extras:
+          message: success
     params:
       page: {role: page}
 
@@ -294,6 +342,8 @@ endpoints:
       pagination_style: none
       wrapper:
         records_key: data
+        extras:
+          message: success
     params:
       length: {role: ignore}
       ending_at: {role: ignore}
@@ -311,6 +361,8 @@ endpoints:
       pagination_style: none
       wrapper:
         records_key: data
+        extras:
+          message: success
     params:
       length: {role: ignore}
       ending_at: {role: ignore}
@@ -331,6 +383,8 @@ endpoints:
       pagination_style: none
       wrapper:
         records_key: data
+        extras:
+          message: success
     params:
       campaign_id: {role: ignore}
       send_id: {role: ignore}

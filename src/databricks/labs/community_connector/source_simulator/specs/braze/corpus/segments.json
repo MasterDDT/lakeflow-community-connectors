@@ -1,41 +1,32 @@
 [
   {
-    "id": "oscar-71-pk0",
-    "name": "zulu-499",
-    "analytics_tracking_enabled": false,
-    "tags": [
-      "charlie-909"
-    ]
-  },
-  {
-    "id": "kilo-822-pk1",
-    "name": "sierra-407",
+    "id": "0a54a01e-675d-4b41-b359-80f33af82567",
+    "name": "All Users (test - Web)",
     "analytics_tracking_enabled": false,
     "tags": []
   },
   {
-    "id": "xray-313-pk2",
-    "name": "india-604",
+    "id": "b9f4b7bf-3a56-4dec-9619-4a209ee53b81",
+    "name": "cindy test",
     "analytics_tracking_enabled": false,
-    "tags": [
-      "foxtrot-707"
-    ]
+    "tags": []
   },
   {
-    "id": "xray-389-pk3",
-    "name": "november-421",
-    "analytics_tracking_enabled": true,
-    "tags": [
-      "echo-772",
-      "november-567"
-    ]
+    "id": "d73fe601-6b4c-4686-a2c4-c50786e910a0",
+    "name": "High Value Shoppers - Test - Jacob Kim",
+    "analytics_tracking_enabled": false,
+    "tags": []
   },
   {
-    "id": "india-82-pk4",
-    "name": "alpha-597",
-    "analytics_tracking_enabled": true,
-    "tags": [
-      "quebec-708"
-    ]
+    "id": "e6aed8c3-27ad-450e-b9f4-b5f66d629907",
+    "name": "cindy test 2",
+    "analytics_tracking_enabled": false,
+    "tags": []
+  },
+  {
+    "id": "afadabc8-310b-47b7-a684-a51725c9411f",
+    "name": "All Users - Jacob Kim - Testing",
+    "analytics_tracking_enabled": false,
+    "tags": []
   }
 ]
