@@ -66,19 +66,7 @@ class TestBrazeConnector(LakeflowConnectTests, SupportsPartitionedStreamTests):
     # draft (``first_entry``/``last_entry`` = null); these fields only populate
     # once the entity has been sent/entered. No corpus record can exercise them,
     # so they are exempt from the column-population invariant.
-    # ``sends_analytics``: Braze nests per-channel send metrics under the
-    # ``messages`` object (which the connector JSON-encodes into the
-    # ``messages`` StringType column), so the flat top-level metric columns the
-    # schema advertises are not populated from a live ``/sends/data_series``
-    # record. The recorded send (to a test recipient) was also never delivered
-    # or opened, so these counts are absent in the live corpus. The underlying
-    # data is preserved inside the ``messages`` JSON string. See SELF_REVIEW.md
-    # — trimming/flattening these columns is a possible schema follow-up.
     allow_null_columns = {
         "campaigns_details": {"first_sent", "last_sent"},
         "canvases_details": {"first_entry", "last_entry"},
-        "sends_analytics": {
-            "sent", "delivered", "undelivered", "delivery_failed",
-            "direct_opens", "total_opens", "bounces", "body_clicks",
-        },
     }

@@ -294,15 +294,12 @@ SENDS_ANALYTICS_SCHEMA = StructType(
         StructField("campaign_id", StringType(), False),
         StructField("send_id", StringType(), False),
         StructField("time", StringType(), False),
-        StructField("messages", StringType(), True),  # channel-keyed -> JSON
-        StructField("sent", LongType(), True),
-        StructField("delivered", LongType(), True),
-        StructField("undelivered", LongType(), True),
-        StructField("delivery_failed", LongType(), True),
-        StructField("direct_opens", LongType(), True),
-        StructField("total_opens", LongType(), True),
-        StructField("bounces", LongType(), True),
-        StructField("body_clicks", LongType(), True),
+        # Per-channel, per-variant send metrics (sent / delivered / opens /
+        # bounces / clicks / …) are nested under ``messages`` in the Braze
+        # ``/sends/data_series`` response, so they are kept here JSON-encoded —
+        # the same shape as campaigns_analytics / canvases_analytics. Parse the
+        # JSON downstream to break them out per channel.
+        StructField("messages", StringType(), True),
         StructField("revenue", DoubleType(), True),
         StructField("unique_recipients", LongType(), True),
         StructField("conversions", LongType(), True),
@@ -310,6 +307,9 @@ SENDS_ANALYTICS_SCHEMA = StructType(
         StructField("conversions1", LongType(), True),
         StructField("conversions2", LongType(), True),
         StructField("conversions3", LongType(), True),
+        StructField("conversions1_by_send_time", LongType(), True),
+        StructField("conversions2_by_send_time", LongType(), True),
+        StructField("conversions3_by_send_time", LongType(), True),
     ]
 )
 
