@@ -60,6 +60,11 @@ tests/unit/sources/*/configs/dev_config.json
 # drop a local override JSON next to a connector to override per run.
 tests/unit/sources/*/configs/replay_config.json
 
+# Deploy pipeline specs written by the deploy-connector flow. These carry
+# workspace-specific pipeline/connection names (and any per-table options) and
+# are local, disposable deploy artifacts — not connector source.
+tests/unit/sources/*/configs/*_spec.yaml
+
 # Source-simulator artifacts written by live runs (cassette, coverage report,
 # spec-validation report). Raw cassettes are regenerated each time and not
 # part of the source of truth — the corpus under source_simulator/specs/<source>/ is.
