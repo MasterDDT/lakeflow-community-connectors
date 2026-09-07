@@ -22,6 +22,11 @@ never validates them.
 
 from __future__ import annotations
 
+import json
+
+import pytest
+from pyspark.sql.types import StringType
+
 from databricks.labs.community_connector.sources.braze.braze import (
     BrazeLakeflowConnect,
 )
@@ -70,3 +75,87 @@ class TestBrazeConnector(LakeflowConnectTests, SupportsPartitionedStreamTests):
         "campaigns_details": {"first_sent", "last_sent"},
         "canvases_details": {"first_entry", "last_entry"},
     }
+
+    # ------------------------------------------------------------------
+    # messages-column JSON-encoding contract (braze-specific)
+    # ------------------------------------------------------------------
+
+    def _collect_records(self, table: str, cap: int = 200) -> list[dict]:
+        """Read up to ``cap`` records from ``table`` via whichever read path
+        it uses — partitioned fan-out (``get_partitions`` + ``read_partition``)
+        or the non-partitioned ``read_table``."""
+        opts = self._opts(table)
+        out: list[dict] = []
+        if self._is_partitioned(table):
+            for partition in self.connector.get_partitions(table, opts):
+                for rec in self.connector.read_partition(table, partition, opts):
+                    out.append(rec)
+                    if len(out) >= cap:
+                        return out
+        else:
+            iterator, _ = self.connector.read_table(table, {}, opts)
+            for rec in iterator:
+                out.append(rec)
+                if len(out) >= cap:
+                    break
+        return out
+
+    def test_messages_column_is_valid_json(self):
+        """Every non-null ``messages`` value is a JSON-encoded object/array.
+
+        Braze nests per-channel / per-message metrics in a ``messages`` column
+        that the connector declares as ``StringType`` and populates via
+        ``json.dumps`` (see ``braze.py``). The harness's structural tests check
+        that the column is populated, but not that its contents round-trip as
+        JSON. This asserts the encoding contract directly: each non-null value
+        must be a ``str`` that parses to a JSON object or array — guarding
+        against a regression that yields a raw ``dict`` / ``list`` (a Spark
+        schema mismatch) or emits malformed JSON. Discovered from the schema,
+        so it auto-covers any table that later gains a ``messages`` column
+        (today: ``campaigns_details``, ``campaigns_analytics``,
+        ``sends_analytics``).
+        """
+        targets = [
+            t for t in self._tables()
+            if any(
+                f.name == "messages" and isinstance(f.dataType, StringType)
+                for f in self.connector.get_table_schema(t, self._opts(t)).fields
+            )
+        ]
+        if not targets:
+            pytest.skip("No table declares a StringType `messages` column")
+
+        seen = 0
+        errors = []
+        for table in targets:
+            for rec in self._collect_records(table):
+                value = rec.get("messages")
+                if value is None:
+                    continue
+                seen += 1
+                if not isinstance(value, str):
+                    errors.append(
+                        f"[{table}] messages is {type(value).__name__}, expected a "
+                        "JSON string (StringType). Fix: json.dumps() before yielding."
+                    )
+                    continue
+                try:
+                    parsed = json.loads(value)
+                except (ValueError, TypeError) as exc:
+                    errors.append(
+                        f"[{table}] messages is not valid JSON: {exc} "
+                        f"— value={value[:200]!r}"
+                    )
+                    continue
+                if not isinstance(parsed, (dict, list)):
+                    errors.append(
+                        f"[{table}] messages decodes to {type(parsed).__name__}, "
+                        "expected a JSON object or array."
+                    )
+        if errors:
+            pytest.fail("\n\n".join(errors))
+        assert seen > 0, (
+            "No non-null `messages` values were produced by any messages-bearing "
+            "stream; the JSON-encoding contract went unexercised. Re-seed the "
+            "corpus so at least one record populates `messages`."
+        )
